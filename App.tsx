@@ -1,78 +1,217 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ImageBackground, Image} from 'react-native';
-import DescripScroll from './component/descriptionscroll/descripScroll';
-import SliderComp from './component/Slider/sliderComp';
-import ShowBoardComp from './component/showBoard/showBoardComp';
+import { useState } from 'react';
+import {NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { ParamListBase } from "@react-navigation/native";
+import ConnectScreenStructure from './navigation/connect';
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+import { Provider } from 'react-redux';
+import { BlurView } from 'expo-blur';
+
+
+// import LoginScreenStructure from './navigaation/login';
+// import DojoScreenStucture from './screen/dojo';
+// import ProfileScreenStructure from './screen/profile';
+// import SignUpScreenStructure from './screen/signUp';
+import LoginScreenStructure from './navigation/login';
+import DojoScreenStucture from './navigation/dojo';
+import ProfileScreenStructure from './navigation/profile';
+import SignUpScreenStructure from './navigation/signUp';
+
+
+
+
+const MyTheme = {
+
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: 'transparent',
+  
+  },
+};
+
+
+type RouteName = 'Profile' | 'Dojo';
+
+
+const icons: Record<RouteName, {focused: any; unfocused: any}> = {
+  Profile: {
+    focused: require('./assets/benw.png'),
+    unfocused: require('./assets/beng.png')
+  }, 
+
+  Dojo: {
+
+    focused: require('./assets/djw.png'),
+    unfocused: require('./assets/djg.png')
+  },
+
+
+}
+
+
+function AppNavigator() {
+
+  return(
+    <NavigationContainer theme={MyTheme} >
+     
+     <ImageBackground
+        source={require("./assets/bgdo.webp")}
+        style={styles.background}
+      >
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+
+          <Stack.Screen name="Login" component={LoginScreenStructure} />
+          <Stack.Screen name="ConnectionScreen" component={TabNavigator}  options={{gestureDirection: 'vertical' }} />
+          {/* <Stack.Screen name="dojoScreen" component={TabNavigator} options={{gestureDirection: 'vertical' }} /> */}
+          <Stack.Screen name="SignupScreen" component={SignUpScreenStructure}  options={{ presentation: "modal" }} />
+          <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "transparentModal"  }}/>
+
+        </Stack.Navigator>
+  
+    </ImageBackground>
+    </NavigationContainer>
+
+  )
+
+}
+
+
+
+
+function TabNavigator() {
+
+  const [filter, setFilter] = useState(false)
+  const [modeScreenToggle, setModeScreenToggle] = useState(false)
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+
+
+
+
+
+
+  return (
+    <Tab.Navigator
+  
+     
+    screenOptions={({route }) => ({
+      tabBarIcon: ({focused}) => {
+        const icon = focused
+        ? icons[route.name as RouteName].focused
+        : icons[route.name as RouteName].unfocused
+        return <Image source={icon} 
+        style={{
+          width: 30, 
+          height: 30
+      }}
+        />
+       },
+       abBarBackground: () => (
+        <BlurView
+          intensity={20}
+          // tint="light" // or "dark", or "default"
+          // style={{ flex: 1 }}
+        />
+      ),
+      tabBarLabelStyle: {
+        marginTop: 10, // This creates a gap between icon and label
+      },
+      tabBarActiveTintColor: 'white',
+      tabBarInactiveTintColor: 'gray',
+      tabBarStyle: { ...styles.tabBar, },
+      headerTitleStyle: {
+        display: "none"
+      },
+    })}
+   
+ 
+    >
+      
+     {/* Explore Tab  */}
+      <Tab.Screen 
+      name='Dojo' 
+      component={ConnectScreenStructure}
+      options={{
+        title: 'Dojo',
+        
+        headerStyle: {
+          backgroundColor: 'transparent',},
+          headerTintColor: 'grey',
+          // headerTitleStyle: {
+          //   fontWeight: 'bold'}
+            
+      }}
+      
+      ></Tab.Screen>
+
+
+
+         {/* Radar Tab */}
+      <Tab.Screen    
+      name='Profile'
+      component={ProfileScreenStructure}
+      options={{
+        title: 'Profile',
+        headerStyle: {
+          backgroundColor: 'transparent',},
+          headerTintColor: 'grey',
+          // headerTitleStyle: {
+          //   fontWeight: 'bold'}
+            
+      }}
+      
+       ></Tab.Screen>
+    </Tab.Navigator>
+  );
+}
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
+
+    // <Provider store={store} >
+    // <View style={styles.container}>
     
-
-       <View  
+    <AppNavigator/>
+    
        
-       style={{
-        // backgroundColor: "grey",
-        // backgroundImage: 'url("/assets/bat.webp")',
-        // experimental_backgroundImage: 'url("/assets/bat.webp")',
-        width: "95%", 
-        height: "91%", 
-        display: "flex", 
-        flexDirection: "column", 
-        gap: 10, 
-        borderWidth: 1,
-        borderColor: "gray",
-        borderStyle: "solid",
-        borderRadius: 7,
-        position:"relative"
-        
-
-       }}>
-        <View style={{
-          position: "absolute",
-          width: "100%", 
-          height: "100%",
-
-          zIndex: 0
-        }}>
-        <Image
-          source={require("./assets/back.webp")}
-          style={{
-            width: "100%",
-            height: "100%",
-            borderRadius:7, 
-            
-          
-
-          }}
-        />
-
-        </View>
-        
-        {/* Play Board  */}
-        <ShowBoardComp/>
-      
-
-        <DescripScroll/>
-
-
-        <SliderComp/>
-
-       </View >
-      <StatusBar style="auto" />
-    </View>
+       
+     
+    // </View>
+    // </Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     height: "100%",
-    backgroundColor: 'black',
+    // backgroundColor: 'skyblue',
     display: "flex", 
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: "2%"
 
+  },
+  tabBar: {
+    // backgroundColor: 'grey', // Customize the background color
+   
+    height: 100, 
+    borderTopWidth: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.53)', // Semi-transparent white for frosted effect
+    position: 'absolute',
+    paddingTop: 20,
+    gap: 5
+  },
+
+  background: {
+    flex: 1,
   },
 });
