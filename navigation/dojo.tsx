@@ -11,7 +11,7 @@ const DojoScreenStucture = () => {
         <View  
        
         style={{
-         backgroundColor: "grey",
+        //  backgroundColor: "grey",
         //  flex: 1,
          // backgroundImage: 'url("/assets/bat.webp")',
          // experimental_backgroundImage: 'url("/assets/bat.webp")',
@@ -23,7 +23,7 @@ const DojoScreenStucture = () => {
          borderWidth: 1,
         //  borderColor: "gray",
         //  borderStyle: "solid",
-         borderRadius: 7,
+        //  borderRadius: 7,
          position:"relative"
          
  
@@ -40,7 +40,7 @@ const DojoScreenStucture = () => {
            style={{
              width: "100%",
              height: "100%",
-             borderRadius:7, 
+            //  borderRadius:7, 
             //  opacity: 0.7
              
            

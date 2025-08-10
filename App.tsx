@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground, Image} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity} from 'react-native';
 import { useState } from 'react';
 import {NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -12,6 +12,7 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 import { Provider } from 'react-redux';
 import { BlurView } from 'expo-blur';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 
 // import LoginScreenStructure from './navigaation/login';
@@ -122,10 +123,17 @@ function TabNavigator() {
       ),
       tabBarLabelStyle: {
         marginTop: 10, // This creates a gap between icon and label
+
+      
       },
       tabBarActiveTintColor: 'white',
       tabBarInactiveTintColor: 'gray',
-      tabBarStyle: { ...styles.tabBar, },
+      
+      tabBarStyle: { 
+        ...styles.tabBar,
+     
+
+       },
       headerTitleStyle: {
         display: "none"
       },
@@ -142,7 +150,67 @@ function TabNavigator() {
         title: 'Dojo',
         
         headerStyle: {
-          backgroundColor: 'transparent',},
+          backgroundColor: 'rgba(0, 0, 0, 0.53)',
+        },
+        headerLeft: () => (
+          <View style={{
+            // backgroundColor:  filter ?  "pink" : "green",
+            width:  199,
+            height: 30,
+            flexDirection: "row",
+            alignItems: "center",
+            // backgroundColor: "pink"
+            paddingLeft: "5%"
+           
+        
+          }}>
+            {/* Explore Mode Option */}
+            <Text style={{
+              fontSize: 25,
+              color: "red"
+            }}>
+              DO-JO-PIX
+            </Text>
+            
+          </View>
+        ),
+        headerRight: () => (
+          <View style={{
+            // backgroundColor:  filter ?  "pink" : "green",
+            width:  150,
+            height: 30,
+            flexDirection: "row",
+            alignItems: "center",
+          justifyContent: "flex-end",
+            // backgroundColor: "pink",
+            paddingRight: "5%"
+           
+        
+          }}>
+            {/* Explore Mode Option */}
+          
+          <TouchableOpacity style={{
+            height: "90%",
+            width: "30%", 
+            // backgroundColor: "pink", 
+          alignItems: "center", 
+          justifyContent: "center"
+          }}>
+               <Image
+                  source={require("./assets/tel.png")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "70%",
+                    height: "90%"
+                    // borderRadius: 100,
+                  }}
+                />
+
+          </TouchableOpacity>
+            
+          </View>
+        ),
           headerTintColor: 'grey',
           // headerTitleStyle: {
           //   fontWeight: 'bold'}
@@ -160,10 +228,12 @@ function TabNavigator() {
       options={{
         title: 'Profile',
         headerStyle: {
-          backgroundColor: 'transparent',},
+          backgroundColor: 'rgba(0, 0, 0, 0.53)',},
           headerTintColor: 'grey',
           // headerTitleStyle: {
           //   fontWeight: 'bold'}
+
+          
             
       }}
       

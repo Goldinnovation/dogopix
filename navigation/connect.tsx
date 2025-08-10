@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native"
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { ParamListBase } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
@@ -16,18 +16,63 @@ const ConnectScreenStructure = () => {
 
     return(
         <View style={styles.container}>
+            <View style={{
+                // backgroundColor: "orange",
+                width: "100%",
+                height: "30%", 
+                alignItems: "center", 
+                justifyContent: "center"
+            }}>
+                <View style={{
+                    width: "100%", 
+                    height: "80%", 
+                    // backgroundColor: "skyblue",
+                    alignItems: "center", 
+                    justifyContent: "center"
+                }}>
+                        <Image
+                  source={require("../assets/me.jpeg")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "40%",
+                    height: "90%",
+                    borderRadius: 100,
+                  }}
+                />
+                </View>
+                <View style={{
+                    width: "100%", 
+                    height: "20%", 
+                    // backgroundColor: "orange", 
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                        <Text
+                        style={{
+                            fontSize: 20, 
+                            color: "white",
+                            opacity: 0.5
+                        }}
+                        >CPN3000</Text>
+                </View>
+
+              
+            </View>
          <View
             style={{
                 //  backgroundColor: "orange",
               justifyContent: "center",
               alignItems: "center",
               // height: verticalScale(90),
-              gap: "40%",
+              gap: "30%",
               height: hp("35%"),
               width: wp("100%"),
               marginBottom: hp("15%"),
             }}
           >
+
+           
             
             <TouchableOpacity onPress={handleInputData} activeOpacity={0.7}>
                 <LinearGradient

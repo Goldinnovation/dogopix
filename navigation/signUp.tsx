@@ -97,7 +97,7 @@ const SignUpScreenStructure = () => {
     >
       <LinearGradient
         // colors={['black', 'black']} 
-        colors={["black", "grey", "#000059", "black"]}
+        colors={["black", "grey", "black", "black"]}
         style={styles.gradient}
         start={{ x: 0, y: 1 }}
         end={{ x: 0, y: 0 }}
