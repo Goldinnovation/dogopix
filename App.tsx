@@ -228,13 +228,72 @@ function TabNavigator() {
       options={{
         title: 'Profile',
         headerStyle: {
-          backgroundColor: 'rgba(0, 0, 0, 0.53)',},
+          backgroundColor: 'rgba(0, 0, 0, 0.53)'},
+          headerLeft: () => (
+            <View style={{
+              // backgroundColor:  filter ?  "pink" : "green",
+              width:  199,
+              height: 30,
+              flexDirection: "row",
+              alignItems: "center",
+              // backgroundColor: "pink"
+              paddingLeft: "5%"
+             
+          
+            }}>
+              {/* Explore Mode Option */}
+              <Text style={{
+                fontSize: 25,
+                color: "red"
+              }}>
+                DO-JO-PIX
+              </Text>
+              
+            </View>
+          ),
+          headerRight: () => (
+            <View style={{
+              // backgroundColor:  filter ?  "pink" : "green",
+              width:  150,
+              height: 30,
+              flexDirection: "row",
+              alignItems: "center",
+            justifyContent: "flex-end",
+              // backgroundColor: "pink",
+              paddingRight: "5%"
+             
+          
+            }}>
+              {/* Explore Mode Option */}
+            
+            <TouchableOpacity style={{
+              height: "90%",
+              width: "30%", 
+              // backgroundColor: "pink", 
+            alignItems: "center", 
+            justifyContent: "center"
+            }}>
+                 <Image
+                    source={require("./assets/setw.png")}
+                    style={{
+                      // width: scale(100),
+                      // height: verticalScale(25),
+                      width: "60%",
+                      height: "90%"
+                      // borderRadius: 100,
+                    }}
+                  />
+  
+            </TouchableOpacity>
+              
+            </View>
+          ),
+
           headerTintColor: 'grey',
           // headerTitleStyle: {
           //   fontWeight: 'bold'}
 
           
-            
       }}
       
        ></Tab.Screen>

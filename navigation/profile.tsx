@@ -1,19 +1,28 @@
-import { View, Text, Image } from "react-native"
+import { View, Text, Image, TouchableOpacity, StyleSheet} from "react-native"
 
 
 
 
 const ProfileScreenStructure = () => {
     return(
-        <View>
+        <View style={styles.container}>
             <View style={{
                 // backgroundColor: "orange", 
                 width: "100%", 
-                height:"25%"
+                height:"7%", 
+                flexDirection: "row", 
+                alignItems: "center", 
+                justifyContent: "space-between", 
+                marginTop: "3%"
             }}>
-              <View style={{
-                // backgroundColor: "pink", 
-                width: "50%", 
+         
+
+       
+
+                {/* Love Heart Section */}
+                <View style={{
+                // backgroundColor: "green", 
+                width: "30%", 
                 height: "100%", 
                 // alignItems:"center",
                 justifyContent: "center",
@@ -22,7 +31,7 @@ const ProfileScreenStructure = () => {
 
               }}>
                 <View style={{
-                    width: "60%", 
+                    width: "100%", 
                     height: "60%",
                     borderWidth: 1,
                     borderRadius: 50, 
@@ -40,7 +49,7 @@ const ProfileScreenStructure = () => {
                    }}>
                    
                    <Image
-                  source={require("../assets/wag.png")}
+                  source={require("../assets/h1.png")}
                   style={{
                     // width: scale(100),
                     // height: verticalScale(25),
@@ -63,26 +72,141 @@ const ProfileScreenStructure = () => {
                    <Text style={{
                     color: "white", 
                     fontSize: 15
-                   }}>1</Text>
+                   }}> 1</Text>
                    </View>
+
+
 
                 </View>
 
               </View>
 
+
+
+                
+                {/* Charge Life */}
+                <View style={{
+                // backgroundColor: "pink", 
+                width: "50%", 
+                height: "100%", 
+                alignItems:"center",
+                justifyContent: "center",
+                // paddingRight: "2%"
+
+
+              }}>
+                <TouchableOpacity style={{
+                    width: "90%", 
+                    height: "60%",
+                    // borderWidth: 1,
+                    borderRadius: 7, 
+                    // borderColor: "gray", 
+                    backgroundColor: 'rgba(185, 4, 170, 0.69)',
+                    flexDirection: "row"
+                }}>
+                  
+                   <View style={{
+                    width: "100%", 
+                    height: "100%",
+                    // backgroundColor: "pink", 
+                    alignItems: "center", 
+                    justifyContent: "center", 
+                    // borderLeftWidth: 1, 
+                    // borderLeftColor: "gray"
+                   }}>
+                   <Text style={{
+                    color: "white", 
+                    fontSize: 15
+                   }}> Charge Life</Text>
+                   </View>
+
+
+
+                </TouchableOpacity>
+
+              </View>
+
+          
+            </View>
+
+
+            <View style={{
+              width: "100%",
+              height: "75%", 
+              // backgroundColor: "pink", 
+              justifyContent: "center", 
+              alignItems: "center", 
+              // 
+              
+           
+             
+            }}>
+
+                <View style={{
+                  // backgroundColor: "skyblue", 
+                  width: "100%", 
+                  height: "60%",
+                  justifyContent: "center", 
+                  alignItems: "center", 
+                  gap: "15%", 
+                  paddingTop: "7%"
+
+                }}>
+                <Text style={{
+              fontSize: 35,
+              textAlign: "center", 
+              color: "white"
+
+
+            }}>You do not truly know someone until you fight them</Text>
+          <Text style={{
+                 fontSize: 20,
+                 textAlign: "center", 
+                 color: "white"
+            }}>
+              -Seraph (Matrix)
+           
+            </Text>
+            
+
+                </View>
+
+
+             
               <View>
 
               </View>
-            </View>
 
-            <View>
-            <Text>1</Text>
+
+           
+           
+          
+          
             </View>
 
         
         </View>
     )
 }
+
+
+
+const styles = StyleSheet.create({
+
+  container: {
+    // backgroundColor: "black",
+    // background: "transparent"
+    flex: 1,
+    // height: "100%",
+    // width: "100%",
+    // justifyContent: "center",
+    // alignItems: "center",
+    // paddingTop: 50,
+    // padding: 7
+
+
+  },
+})
 
 
 
