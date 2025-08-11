@@ -1,9 +1,19 @@
 import { View, Text, Image, TouchableOpacity, StyleSheet} from "react-native"
-
+import { ParamListBase } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
 
 
 const ProfileScreenStructure = () => {
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+
+
+
+  const handleChargeScreen = () => {
+    navigation.push("ChargeScreen");
+  }
     return(
         <View style={styles.container}>
             <View style={{
@@ -72,7 +82,7 @@ const ProfileScreenStructure = () => {
                    <Text style={{
                     color: "white", 
                     fontSize: 15
-                   }}> 1</Text>
+                   }}> 200</Text>
                    </View>
 
 
@@ -89,13 +99,17 @@ const ProfileScreenStructure = () => {
                 // backgroundColor: "pink", 
                 width: "50%", 
                 height: "100%", 
-                alignItems:"center",
+                alignItems: "flex-end",
                 justifyContent: "center",
-                // paddingRight: "2%"
+                
+                paddingRight: "4%"
 
 
               }}>
-                <TouchableOpacity style={{
+                <TouchableOpacity 
+
+                onPress={() => handleChargeScreen()}
+                style={{
                     width: "90%", 
                     height: "60%",
                     // borderWidth: 1,
@@ -103,6 +117,7 @@ const ProfileScreenStructure = () => {
                     // borderColor: "gray", 
                     backgroundColor: 'rgba(185, 4, 170, 0.69)',
                     flexDirection: "row"
+
                 }}>
                   
                    <View style={{
@@ -155,14 +170,16 @@ const ProfileScreenStructure = () => {
                 <Text style={{
               fontSize: 35,
               textAlign: "center", 
-              color: "white"
+              color: "white", 
+              opacity: 0.9
 
 
             }}>You do not truly know someone until you fight them</Text>
           <Text style={{
                  fontSize: 20,
                  textAlign: "center", 
-                 color: "white"
+                 color: "white", 
+                 opacity: 0.9
             }}>
               -Seraph (Matrix)
            

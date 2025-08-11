@@ -13,7 +13,9 @@ const Stack = createStackNavigator();
 import { Provider } from 'react-redux';
 import { BlurView } from 'expo-blur';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-
+import ChargeScreenStructure from './navigation/charge';
+import SettingScreenStructure from './navigation/setting';
+import TelefonScreenStructure from './navigation/telefon';
 
 // import LoginScreenStructure from './navigaation/login';
 // import DojoScreenStucture from './screen/dojo';
@@ -72,8 +74,14 @@ function AppNavigator() {
           <Stack.Screen name="ConnectionScreen" component={TabNavigator}  options={{gestureDirection: 'vertical' }} />
           {/* <Stack.Screen name="dojoScreen" component={TabNavigator} options={{gestureDirection: 'vertical' }} /> */}
           <Stack.Screen name="SignupScreen" component={SignUpScreenStructure}  options={{ presentation: "modal" }} />
+          <Stack.Screen name="ChargeScreen" component={ChargeScreenStructure}  options={{ presentation: "modal" }} />
           <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "transparentModal"  }}/>
 
+          <Stack.Screen name="SettingScreen" component={SettingScreenStructure}  options={{ presentation:  "card"  }}/>
+          <Stack.Screen name="TelefonScreen" component={TelefonScreenStructure}  options={{ presentation:  "transparentModal"  }}/>
+         
+
+        
         </Stack.Navigator>
   
     </ImageBackground>
@@ -189,12 +197,15 @@ function TabNavigator() {
           }}>
             {/* Explore Mode Option */}
           
-          <TouchableOpacity style={{
+          <TouchableOpacity 
+            onPress={() => navigation.push("TelefonScreen")}
+          style={{
             height: "90%",
             width: "30%", 
             // backgroundColor: "pink", 
           alignItems: "center", 
           justifyContent: "center"
+
           }}>
                <Image
                   source={require("./assets/tel.png")}
@@ -221,7 +232,7 @@ function TabNavigator() {
 
 
 
-         {/* Radar Tab */}
+         {/* Profile Tab */}
       <Tab.Screen    
       name='Profile'
       component={ProfileScreenStructure}
@@ -266,7 +277,10 @@ function TabNavigator() {
             }}>
               {/* Explore Mode Option */}
             
-            <TouchableOpacity style={{
+            <TouchableOpacity 
+
+            onPress={() => navigation.push("SettingScreen")}
+            style={{
               height: "90%",
               width: "30%", 
               // backgroundColor: "pink", 
@@ -278,8 +292,8 @@ function TabNavigator() {
                     style={{
                       // width: scale(100),
                       // height: verticalScale(25),
-                      width: "60%",
-                      height: "90%"
+                      width: "55%",
+                      height: "94%"
                       // borderRadius: 100,
                     }}
                   />
