@@ -14,9 +14,15 @@ const LoginScreenStructure = () => {
   const [password, setonChangePassword] = useState("");
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
-  const handleLoginData = async () => {
+  const handleLoginData = async (profileState: boolean) => {
 
-    navigation.replace("ConnectionScreen");
+
+    if(!profileState){
+      navigation.replace("SetProfileScreen");
+    }else{
+      navigation.replace("ConnectionScreen");  
+    }
+   
     // try {
     //   const result = await useLoginPost(email, password);
     //   if (result.message && result.token) {
@@ -161,7 +167,7 @@ const LoginScreenStructure = () => {
           alignItems: "center",
           height: 90,
         }}>
-          <TouchableOpacity style={styles.loginBtn} onPress={handleLoginData}>
+          <TouchableOpacity style={styles.loginBtn} onPress={() =>handleLoginData(false)}>
             <Text style={{
               color: "white"
             }}>Login</Text>

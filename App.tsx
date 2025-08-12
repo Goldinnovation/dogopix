@@ -16,7 +16,7 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import ChargeScreenStructure from './navigation/charge';
 import SettingScreenStructure from './navigation/setting';
 import TelefonScreenStructure from './navigation/telefon';
-
+import SetProfileScreen from './navigation/setProfileInfo';
 // import LoginScreenStructure from './navigaation/login';
 // import DojoScreenStucture from './screen/dojo';
 // import ProfileScreenStructure from './screen/profile';
@@ -71,8 +71,9 @@ function AppNavigator() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
 
           <Stack.Screen name="Login" component={LoginScreenStructure} />
-          <Stack.Screen name="ConnectionScreen" component={TabNavigator}  options={{gestureDirection: 'vertical' }} />
           {/* <Stack.Screen name="dojoScreen" component={TabNavigator} options={{gestureDirection: 'vertical' }} /> */}
+          <Stack.Screen name="ConnectionScreen" component={TabNavigator}  options={{gestureDirection: 'vertical' }} />
+          <Stack.Screen name="SetProfileScreen" component={SetProfileScreen}  options={{ presentation: "card" }} />
           <Stack.Screen name="SignupScreen" component={SignUpScreenStructure}  options={{ presentation: "modal" }} />
           <Stack.Screen name="ChargeScreen" component={ChargeScreenStructure}  options={{ presentation: "modal" }} />
           <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "transparentModal"  }}/>
