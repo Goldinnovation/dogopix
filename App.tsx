@@ -26,7 +26,7 @@ import DojoScreenStucture from './navigation/dojo';
 import ProfileScreenStructure from './navigation/profile';
 import SignUpScreenStructure from './navigation/signUp';
 import RainLayer from './component/Rain/rainlayer';
-
+import FightTopic from './navigation/fightTopic';
 
 
 

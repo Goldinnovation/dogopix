@@ -1,13 +1,42 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
+import { View, Text, StyleSheet, TouchableOpacity, FlatList } from "react-native"
+
 import { ParamListBase } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-
+import "../global.css"
 
 
 const TelefonScreenStructure = () => { 
     const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
+    const CityMap = [
+      {
+        Id: "1", 
+        city: "Berlin",
+        image: "image.png"
+      }, 
+      {
+        Id: "1", 
+        city: "Berlin",
+        image: "image.png"
+      },
+      {
+        Id: "1", 
+        city: "Berlin",
+        image: "image.png"
+      },
+      {
+        Id: "1", 
+        city: "Berlin",
+        image: "image.png"
+      },
+      {
+        Id: "1", 
+        city: "Berlin",
+        image: "image.png"
+      }
+
+    ]
 
 
 
@@ -23,11 +52,19 @@ const TelefonScreenStructure = () => {
             <Text>Charge</Text>
 
 
-            <TouchableOpacity
+            <View className="items-center justify-center bg-blue-200 h-[20%]">
+
+            <Text>halldsdsdsdlo</Text>
+            </View>
+
+            <View>
+            <Text>Content</Text>
+            </View>
+            {/* <TouchableOpacity
                 onPress={() => hanleGoBackToProfile()}
             >
-                <Text>Back </Text>
-            </TouchableOpacity>
+               
+            </TouchableOpacity> */}
          </View>
     )
 }
