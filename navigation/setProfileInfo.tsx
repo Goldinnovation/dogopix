@@ -1,7 +1,26 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, ImageBackground } from "react-native";
+import RainLayer from "../component/Rain/rainlayer";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { ParamListBase } from "@react-navigation/native";
 
 const SetProfileScreen = () => {
+    const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+    const handleAgentEntry = () => {
+        navigation.replace("ConnectionScreen"); 
+    }
   return (
+
+    <View style={{ flex: 1,  backgroundColor:"black" }}>
+    <ImageBackground
+        source={require("./../assets/room.webp")}
+        style={{flex: 1,}}
+      >
+
+     
+              {/* <RainLayer /> */}
+   
     <View style={styles.container}>
       <View
         style={{
@@ -42,11 +61,54 @@ const SetProfileScreen = () => {
             <View style={{
             height: "75%",
             width: "43%",
-            backgroundColor: "pink", 
-            borderRadius: 100    
+            backgroundColor: "grey", 
+            borderRadius: 100,
+            display: "flex", 
+            justifyContent: "center", 
+            alignItems: "center", 
+            position: "relative"
             
             }}>
            
+           
+           <Image
+                  source={require("./../assets/agent.png")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "70%",
+                    height: "90%"
+                    // borderRadius: 100,
+                  }}
+                />
+
+            <View style={{
+                position:"absolute",
+                top: "10%",
+                
+                width: "36%",
+                height: "30%",
+                left: "70%",
+                // backgroundColor: "green",
+                zIndex: 5,
+                display: "flex", 
+                justifyContent: "center", 
+                alignItems: "center", 
+            }}>
+                    <Image
+                  source={require("./../assets/shot.png")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "70%",
+                    height: "90%"
+                    // borderRadius: 100,
+                  }}
+                />
+
+               
+
+            </View>
           
         </View>
        
@@ -88,11 +150,11 @@ const SetProfileScreen = () => {
             alignItems: "center",
             justifyContent: "center",
         }}
-        
+        onPress={handleAgentEntry}
         >
             <Text style={{
               color: "white"
-            }}>Login</Text>
+            }}>Enter</Text>
           </TouchableOpacity>
       </View>
 
@@ -102,12 +164,14 @@ const SetProfileScreen = () => {
       
 
     </View>
+    </ImageBackground>
+    </View> 
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "black",
+    backgroundColor: "transparent",
     // background: "transparent"
     flex: 1,
     height: "100%",

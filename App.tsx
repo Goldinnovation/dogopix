@@ -25,6 +25,7 @@ import LoginScreenStructure from './navigation/login';
 import DojoScreenStucture from './navigation/dojo';
 import ProfileScreenStructure from './navigation/profile';
 import SignUpScreenStructure from './navigation/signUp';
+import RainLayer from './component/Rain/rainlayer';
 
 
 
@@ -68,6 +69,7 @@ function AppNavigator() {
         source={require("./assets/bgdo.webp")}
         style={styles.background}
       >
+    
       <Stack.Navigator screenOptions={{ headerShown: false }}>
 
           <Stack.Screen name="Login" component={LoginScreenStructure} />
