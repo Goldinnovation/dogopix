@@ -14,7 +14,7 @@ import { Provider } from 'react-redux';
 import { BlurView } from 'expo-blur';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import ChargeScreenStructure from './navigation/charge';
-import SettingScreenStructure from './navigation/setting';
+import SettingScreen from './navigation/settingScreen';
 import TelefonScreenStructure from './navigation/telefon';
 import SetProfileScreen from './navigation/setProfileInfo';
 // import LoginScreenStructure from './navigaation/login';
@@ -80,7 +80,7 @@ function AppNavigator() {
           <Stack.Screen name="ChargeScreen" component={ChargeScreenStructure}  options={{ presentation: "modal" }} />
           <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "transparentModal"  }}/>
 
-          <Stack.Screen name="SettingScreen" component={SettingScreenStructure}  options={{ presentation:  "card"  }}/>
+          <Stack.Screen name="SettingScreen" component={SettingScreen}  options={{ presentation:  "card"  }}/>
           <Stack.Screen name="TelefonScreen" component={TelefonScreenStructure}  options={{ presentation:  "transparentModal"  }}/>
          
 
