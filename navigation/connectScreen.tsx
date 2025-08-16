@@ -4,13 +4,19 @@ import { ParamListBase } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { LinearGradient } from "expo-linear-gradient";
-const ConnectScreenStructure = () => {
+
+
+
+
+
+const ConnectScreen = () => {
     const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
 
     const handleInputData = () => {
         
-    navigation.replace("DojoScreen");
+    // navigation.replace("DojoScreen");
+    navigation.push("GameMoodScreen");
     }
 
 
@@ -148,4 +154,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default ConnectScreenStructure
+export default ConnectScreen

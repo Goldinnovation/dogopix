@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { ParamListBase } from "@react-navigation/native";
-import ConnectScreenStructure from './navigation/connect';
+import ConnectScreen from './navigation/connectScreen';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 import { Provider } from 'react-redux';
@@ -27,6 +27,7 @@ import ProfileScreenStructure from './navigation/profile';
 import SignUpScreenStructure from './navigation/signUp';
 import RainLayer from './component/Rain/rainlayer';
 import FightTopic from './navigation/fightTopic';
+import GameMoodScreen from './navigation/moodScreen';
 
 
 
@@ -78,6 +79,8 @@ function AppNavigator() {
           <Stack.Screen name="SetProfileScreen" component={SetProfileScreen}  options={{ presentation: "card" }} />
           <Stack.Screen name="SignupScreen" component={SignUpScreenStructure}  options={{ presentation: "modal" }} />
           <Stack.Screen name="ChargeScreen" component={ChargeScreenStructure}  options={{ presentation: "modal" }} />
+
+          <Stack.Screen name="GameMoodScreen" component={GameMoodScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "transparentModal"  }}/>
 
           <Stack.Screen name="SettingScreen" component={SettingScreen}  options={{ presentation:  "card"  }}/>
@@ -133,7 +136,7 @@ function TabNavigator() {
         />
       ),
       tabBarLabelStyle: {
-        marginTop: 10, // This creates a gap between icon and label
+        marginTop: 10, // This creates a gap between icon and labelS
 
       
       },
@@ -156,7 +159,7 @@ function TabNavigator() {
      {/* Explore Tab  */}
       <Tab.Screen 
       name='Dojo' 
-      component={ConnectScreenStructure}
+      component={ConnectScreen}
       options={{
         title: 'Dojo',
         
