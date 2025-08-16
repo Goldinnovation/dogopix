@@ -62,7 +62,16 @@ const SettingScreen = () => {
                   {/* Feedback */}
                   <View className="w-[30%] h-[100%] items-center justify-center   gap-2">
                   <TouchableOpacity className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
-                     <Text className="color-white">1</Text>
+                  <Image
+                  source={require("./../assets/fed.png")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "50%",
+                    height: "50%"
+                    // borderRadius: 100,
+                  }}
+                />
                   </TouchableOpacity>
                   <View className="w-[100%] h-[20%] items-center justify-center">
                     <Text className="color-white">Shop</Text>
@@ -72,10 +81,19 @@ const SettingScreen = () => {
                   {/*   Shop */}
                   <View className="w-[30%] h-[100%] items-center justify-center   gap-2">
                   <TouchableOpacity className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
-                     <Text className="color-white">1</Text>
+                  <Image
+                  source={require("./../assets/edpf.png")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "50%",
+                    height: "50%"
+                    // borderRadius: 100,
+                  }}
+                />
                   </TouchableOpacity>
                   <View className="w-[100%] h-[20%] items-center justify-center">
-                    <Text className="color-white">Roles</Text>
+                    <Text className="color-white">Edit</Text>
                   </View>
                   </View>
 
@@ -89,7 +107,15 @@ const SettingScreen = () => {
                   {/* Feedback */}
                   <View className="w-[30%] h-[100%]  items-center justify-center   gap-2">
                   <TouchableOpacity className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
-                     <Text className="color-white">1</Text>
+                  <Image
+                  source={require("./../assets/fdk.png")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "55%",
+                    height: "55%"
+                    // borderRadius: 100,
+                  }}/>
                   </TouchableOpacity>
                   <View className="w-[100%] h-[20%] items-center justify-center">
                     <Text className="color-white">Feedback</Text>
@@ -99,10 +125,18 @@ const SettingScreen = () => {
                   {/*   Shop */}
                   <View className="w-[30%] h-[100%]  items-center justify-center   gap-2">
                   <TouchableOpacity className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
-                     <Text className="color-white">1</Text>
+                  <Image
+                  source={require("./../assets/alien.png")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "50%",
+                    height: "50%"
+                    // borderRadius: 100,
+                  }}/>
                   </TouchableOpacity>
                   <View className="w-[100%] h-[20%] items-center justify-center">
-                    <Text className="color-white">Flags</Text>
+                    <Text className="color-white">Guide</Text>
                   </View>
                   </View>
 
@@ -119,10 +153,18 @@ const SettingScreen = () => {
                   {/* Feedback */}
                   <View className="w-[30%] h-[100%]  items-center justify-center   gap-2">
                   <TouchableOpacity className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
-                     <Text className="color-white">1</Text>
+                  <Image
+                  source={require("./../assets/pwOf.png")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "45%",
+                    height: "45%"
+                    // borderRadius: 100,
+                  }}/>
                   </TouchableOpacity>
                   <View className="w-[100%] h-[20%] items-center justify-center">
-                    <Text className="color-white">Log Out</Text>
+                    <Text className="color-white">Power Off</Text>
                   </View>
                   </View>
 

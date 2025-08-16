@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 import { Provider } from 'react-redux';
 import { BlurView } from 'expo-blur';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import ChargeScreenStructure from './navigation/charge';
+import ChargeScreen from './navigation/chargeScreen';
 import SettingScreen from './navigation/settingScreen';
 import TelefonScreenStructure from './navigation/telefon';
 import SetProfileScreen from './navigation/setProfileInfo';
@@ -27,8 +27,9 @@ import ProfileScreenStructure from './navigation/profile';
 import SignUpScreenStructure from './navigation/signUp';
 import RainLayer from './component/Rain/rainlayer';
 import FightTopic from './navigation/fightTopic';
-import CreateScreen from './navigation/CreateScreen';
+
 import JoinScreen from './navigation/JoinScreen';
+import CreateScreen from './navigation/createScreen';
 
 
 const MyTheme = {
@@ -78,7 +79,7 @@ function AppNavigator() {
           <Stack.Screen name="ConnectionScreen" component={TabNavigator}  options={{gestureDirection: 'vertical' }} />
           <Stack.Screen name="SetProfileScreen" component={SetProfileScreen}  options={{ presentation: "card" }} />
           <Stack.Screen name="SignupScreen" component={SignUpScreenStructure}  options={{ presentation: "modal" }} />
-          <Stack.Screen name="ChargeScreen" component={ChargeScreenStructure}  options={{ presentation: "modal" }} />
+          <Stack.Screen name="ChargeScreen" component={ChargeScreen}  options={{ presentation: "modal" }} />
 
           <Stack.Screen name="CreateScreen" component={CreateScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="JoinScreen" component={JoinScreen}  options={{ presentation:  "transparentModal"  }}/>

@@ -58,7 +58,7 @@ const SetProfileScreen = () => {
             
         }}>
             
-            <View style={{
+            <TouchableOpacity style={{
             height: "75%",
             width: "43%",
             backgroundColor: "grey", 
@@ -110,7 +110,7 @@ const SetProfileScreen = () => {
 
             </View>
           
-        </View>
+        </TouchableOpacity>
        
         </View>
         
