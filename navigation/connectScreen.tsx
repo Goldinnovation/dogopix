@@ -13,10 +13,16 @@ const ConnectScreen = () => {
     const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
 
-    const handleInputData = () => {
-        
-    // navigation.replace("DojoScreen");
-    navigation.push("GameMoodScreen");
+    const handleUserGamePlayOption = (userDecision: string) => {
+    
+        if(userDecision == "create"){
+            console.log('creatE:', userDecision );
+            navigation.push("CreateScreen");
+        }else{
+            console.log('j:', userDecision );
+            navigation.push("JoinScreen");
+        }
+   
     }
 
 
@@ -80,7 +86,7 @@ const ConnectScreen = () => {
 
            
             
-            <TouchableOpacity onPress={handleInputData} activeOpacity={0.7}>
+            <TouchableOpacity onPress={() =>handleUserGamePlayOption("create")} activeOpacity={0.7}>
                 <LinearGradient
                     colors={['pink','red','darkred', 'red', 'pink']}
                     style={{ 
@@ -107,7 +113,7 @@ const ConnectScreen = () => {
                 </LinearGradient>
                 </TouchableOpacity>
      
-                <TouchableOpacity onPress={handleInputData} activeOpacity={0.7}>
+                <TouchableOpacity onPress={() => handleUserGamePlayOption("join")} activeOpacity={0.7}>
                 <LinearGradient
                     colors={['skyblue', 'blue', 'darkblue', 'blue', 'skyblue', ]}
                     style={{

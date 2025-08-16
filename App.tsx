@@ -27,8 +27,8 @@ import ProfileScreenStructure from './navigation/profile';
 import SignUpScreenStructure from './navigation/signUp';
 import RainLayer from './component/Rain/rainlayer';
 import FightTopic from './navigation/fightTopic';
-import GameMoodScreen from './navigation/moodScreen';
-
+import CreateScreen from './navigation/CreateScreen';
+import JoinScreen from './navigation/JoinScreen';
 
 
 const MyTheme = {
@@ -80,9 +80,9 @@ function AppNavigator() {
           <Stack.Screen name="SignupScreen" component={SignUpScreenStructure}  options={{ presentation: "modal" }} />
           <Stack.Screen name="ChargeScreen" component={ChargeScreenStructure}  options={{ presentation: "modal" }} />
 
-          <Stack.Screen name="GameMoodScreen" component={GameMoodScreen}  options={{ presentation:  "transparentModal"  }}/>
+          <Stack.Screen name="CreateScreen" component={CreateScreen}  options={{ presentation:  "transparentModal"  }}/>
+          <Stack.Screen name="JoinScreen" component={JoinScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "transparentModal"  }}/>
-
           <Stack.Screen name="SettingScreen" component={SettingScreen}  options={{ presentation:  "card"  }}/>
           <Stack.Screen name="TelefonScreen" component={TelefonScreenStructure}  options={{ presentation:  "transparentModal"  }}/>
          

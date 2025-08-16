@@ -5,7 +5,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { useState } from "react";
 
 
-const GameMoodScreen = () => { 
+const CreateScreen = () => { 
     const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
     const [width, setWidth] = useState(0);
 
@@ -91,4 +91,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default GameMoodScreen
+export default CreateScreen
