@@ -152,7 +152,9 @@ const SettingScreen = () => {
                   
                   {/* Feedback */}
                   <View className="w-[30%] h-[100%]  items-center justify-center   gap-2">
-                  <TouchableOpacity className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
+                  <TouchableOpacity 
+                 
+                  className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
                   <Image
                   source={require("./../assets/pwOf.png")}
                   style={{
@@ -163,6 +165,7 @@ const SettingScreen = () => {
                     // borderRadius: 100,
                   }}/>
                   </TouchableOpacity>
+                  
                   <View className="w-[100%] h-[20%] items-center justify-center">
                     <Text className="color-white">Power Off</Text>
                   </View>

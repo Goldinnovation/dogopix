@@ -16,7 +16,7 @@ const ChargeScreen = () => {
   let [heartBeatCount, setheartBeatCount] = useState(100);
 
   const HearthBoxes = [
-    { id: 1, image: "image1", description: "desdcjksasa", cost: 5 },
+    { id: 1, image: "/gesHeart.png", description: "desdcjksasa", cost: 5 },
     { id: 2, image: "image1", description: "desdcjksasa", cost: 5 },
     { id: 3, image: "image1", description: "desdcjksasa", cost: 5 },
     { id: 4, image: "image1", description: "desdcjksasa", cost: 5 },
@@ -124,7 +124,15 @@ const ChargeScreen = () => {
             renderItem={({ item }) => (
               <View className="mt-[8%] border border-gray-500 rounded-lg flex flex-row items-center h-20">
               <View className="w-[30%] h-full  items-center justify-center flex">
-                <Text>{item.image} Image</Text>
+              <Image
+                source={require(`../assets/gesHeart.png`)}
+                style={{
+                  // width: scale(100),
+                  // height: verticalScale(25),
+                  width: "35%",
+                  height: "50%",
+                  // borderRadius: 100,
+                }}/>
               </View>
 
               <View className=" w-[45%] h-full items-center justify-center">
@@ -146,7 +154,9 @@ const ChargeScreen = () => {
         </View>
 
         <View className="w-full h-[30%] items-center justify-center">
-          <TouchableOpacity className="bg-blue-600 w-[60%] h-[60&] rounded-lg  items-center justify-center">
+          <TouchableOpacity
+          onPress={() => navigation.goBack()}
+           className="bg-blue-600 w-[60%] h-[60&] rounded-lg  items-center justify-center">
             <Text className="text-white text-2xl">Purchase</Text>
           </TouchableOpacity>
         </View>
