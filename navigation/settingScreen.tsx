@@ -25,7 +25,7 @@ const SettingScreen = () => {
      
         
 
-            <View  className=" w-full h-[7%] jusitfy-center">  
+            <View  className="w-full h-[7%]  jusitfy-center">  
             <TouchableOpacity 
             onPress={handleGoBackTopProfile}
             className="flex flex-row w-[35%] h-[100%] pl-[2%] items-center">
@@ -49,10 +49,7 @@ const SettingScreen = () => {
             </TouchableOpacity>
            
             </View>
-            <View  className="w-full h-[7%] mt-[5%]  items-center justify-center ">  
-
-                <Text className="color-white text-4xl">Settings</Text>
-              </View>
+           
            
               <View className=" h-[90%]  items-center" >
                 <View className="w-full h-[95%]  gap-16">

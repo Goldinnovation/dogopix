@@ -16,7 +16,7 @@ import { BlurView } from "expo-blur";
 
 const GuideScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
-
+  
   return (
     <View style={styles.container}>
          <LinearGradient
@@ -54,7 +54,7 @@ const GuideScreen = () => {
             shadowOffset: { width: 0, height: 4 },
           }}
         > */}
-          <Text className="text-3xl font-bold text-green-300 mb-4 text-center tracking-wider">
+          <Text className="text-3xl font-bold text-green-300 mb-4  text-center tracking-wider">
             Welcome to the Guide
           </Text>
           <Text className="text-base text-white leading-7 text-center mb-4">
@@ -67,7 +67,7 @@ const GuideScreen = () => {
             If you’re ready to play fair and build trust, you’re in the right place!
           </Text>
           <View className="w-full bg-white/10 rounded-2xl p-4 mb-4 border border-white/10">
-  <Text className="text-xl font-bold text-green-200 mb-2 text-center">
+  <Text className="text-xl font-bold text-green-200 mb-5 mt-3  text-center">
     How to Play DojoPix
   </Text>
   <Text className="text-base text-white leading-7 mb-4">
@@ -102,7 +102,7 @@ const GuideScreen = () => {
         <Text className="font-bold text-green-300">Step 7.</Text> <Text className="text-white">If you win, you get to see the opponent’s image for that round.</Text>
       </Text>
       <Text className="mb-5">
-        <Text className="font-bold text-green-300">Step 8.</Text> <Text className="text-white">If you lose, your opponent sees your image for that round.</Text>
+        <Text className="font-bold text-green-300">Step 8.</Text> <Text className="text-white">If you lose, your opponent sees nothing.</Text>
       </Text>
     </View>
   </View>

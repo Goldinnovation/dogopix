@@ -23,7 +23,8 @@ const ProfileScreenStructure = () => {
                 flexDirection: "row", 
                 alignItems: "center", 
                 justifyContent: "space-between", 
-                marginTop: "3%"
+                marginTop: "3%",
+                // opacity: 0
             }}>
          
 
@@ -47,7 +48,8 @@ const ProfileScreenStructure = () => {
                     borderRadius: 50, 
                     borderColor: "gray", 
                     backgroundColor: 'rgba(0, 0, 0, 0.75)',
-                    flexDirection: "row"
+                    flexDirection: "row",
+                    
                 }}>
                    <View style={{
                     width: "40%", 
