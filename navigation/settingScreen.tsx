@@ -61,7 +61,9 @@ const SettingScreen = () => {
                   
                   {/* Feedback */}
                   <View className="w-[30%] h-[100%] items-center justify-center   gap-2">
-                  <TouchableOpacity className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
+                  <TouchableOpacity
+                  onPress={() => navigation.push("ShopScreen")}
+                   className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
                   <Image
                   source={require("./../assets/fed.png")}
                   style={{
@@ -80,7 +82,9 @@ const SettingScreen = () => {
 
                   {/*   Shop */}
                   <View className="w-[30%] h-[100%] items-center justify-center   gap-2">
-                  <TouchableOpacity className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
+                  <TouchableOpacity
+                  onPress={() => navigation.push("SetProfileScreen")}
+                   className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
                   <Image
                   source={require("./../assets/edpf.png")}
                   style={{
@@ -124,7 +128,9 @@ const SettingScreen = () => {
 
                   {/*   Shop */}
                   <View className="w-[30%] h-[100%]  items-center justify-center   gap-2">
-                  <TouchableOpacity className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
+                  <TouchableOpacity
+                   onPress={() => navigation.push("GuideScreen")}
+                  className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
                   <Image
                   source={require("./../assets/alien.png")}
                   style={{

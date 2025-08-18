@@ -30,6 +30,8 @@ import FightTopic from './navigation/fightTopic';
 
 import JoinScreen from './navigation/JoinScreen';
 import CreateScreen from './navigation/createScreen';
+import ShopScreen from './navigation/shopScreen';
+import GuideScreen from './navigation/guideScreen';
 
 
 const MyTheme = {
@@ -81,6 +83,9 @@ function AppNavigator() {
           <Stack.Screen name="SignupScreen" component={SignUpScreenStructure}  options={{ presentation: "modal" }} />
           <Stack.Screen name="ChargeScreen" component={ChargeScreen}  options={{ presentation: "modal" }} />
 
+          <Stack.Screen name="GuideScreen" component={GuideScreen}  options={{ presentation:  "transparentModal"  }}/>
+  
+          <Stack.Screen name="ShopScreen" component={ShopScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="CreateScreen" component={CreateScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="JoinScreen" component={JoinScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "transparentModal"  }}/>

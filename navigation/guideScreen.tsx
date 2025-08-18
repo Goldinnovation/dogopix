@@ -1,36 +1,18 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  TextInput,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { ParamListBase } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
-const JoinScreen = () => {
+const GuideScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
-
-  const hanleGoBackToProfile = () => {
-    navigation.goBack();
-  };
 
   return (
     <View style={styles.container}>
-      <View className="h-[10%] w-full flex flex-row items-center justify-center mt-[50%]">
+      <View className="h-[10%] w-full flex flex-row items-center justify-center">
         <Text className="text-3xl color-white">Enter Your Code</Text>
       </View>
       <View className="h-[50%] w-full flex flex-col">
-        <View className="h-[30%] w-full flex flex-row items-center justify-center">
-          <TextInput
-            style={styles.passwordInput}
-            // onChangeText={}
-            // value={password}
-            placeholder="Enter Code"
-            placeholderTextColor="#000"
-          />
-        </View>
+       
 
         <View className="h-[30%] w-full flex flex-row items-center justify-center">
           <TouchableOpacity 
@@ -52,26 +34,16 @@ const JoinScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "black",
+    backgroundColor: "pink",
     // background: "transparent"
     flex: 1,
     height: "100%",
     // width: "100%",
-    // justifyContent: "center",
-    // alignItems: "center",
-    paddingTop: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    // paddingTop: 50,
     // padding: 7
-  },
-
-  passwordInput: {
-    height: 40,
-    borderWidth: 1,
-    padding: 5,
-    width: "80%",
-    // margin: 30,
-    backgroundColor: "#c7c7c7",
-    borderRadius: 7,
   },
 });
 
-export default JoinScreen;
+export default GuideScreen;

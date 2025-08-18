@@ -32,15 +32,18 @@ const ChargeScreen = () => {
     <View style={styles.container}>
       {/* Header */}
       <View className="h-[10%] w-full flex flex-row border border-b-gray-500">
-        <View className="h-full w-[80%] justify-center pl-[2%] ">
-          <View className="flex flex-row w-[45%] h-[46%] rounded-full border border-gray-500 ">
+        <View className="h-full w-[40%] justify-center pl-[2%] ">
+          <View className="mb-[2%] pl-[6%]">
+            <Text className="text-white">Current Life</Text>
+          </View>
+          <View className="flex flex-row  w-[85%] h-[40%] rounded-full border border-gray-500">
             <View className="w-[40%] h-full items-center justify-center border-r border-r-gray-500 ">
               <Image
                 source={require("../assets/h1.png")}
                 style={{
                   // width: scale(100),
                   // height: verticalScale(25),
-                  width: "40%",
+                  width: "35%",
                   height: "50%",
                   // borderRadius: 100,
                 }}
@@ -52,6 +55,11 @@ const ChargeScreen = () => {
             </View>
           </View>
         </View>
+
+        <View className="h-full w-[40%] items-end justify-center">
+        <Text className="color-white text-xl">Charge Profile</Text>
+        </View>
+
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           className="h-full w-[20%]  items-center justify-center "
