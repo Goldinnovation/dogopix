@@ -140,7 +140,7 @@ const SettingScreen = () => {
                   {/*   Shop */}
                   <View className="w-[30%] h-[100%]  items-center justify-center   gap-2">
                   <TouchableOpacity
-                   onPress={() => navigation.push("GuideScreen")}
+                   onPress={() => navigation.replace("Login")}
                   className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
                  
                    <Image

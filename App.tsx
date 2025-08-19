@@ -32,7 +32,8 @@ import JoinScreen from './navigation/JoinScreen';
 import CreateScreen from './navigation/createScreen';
 import ShopScreen from './navigation/shopScreen';
 import GuideScreen from './navigation/guideScreen';
-
+import BattleFieldBackgroundScreen from './navigation/battleFieldBackgroundScreen';
+import ChallengeWaitingRoom from './navigation/challengeWaitingRoom';
 
 
 const MyTheme = {
@@ -77,22 +78,23 @@ function AppNavigator() {
     
       <Stack.Navigator screenOptions={{ headerShown: false }}>
 
-          <Stack.Screen name="Login" component={LoginScreenStructure} />
+          <Stack.Screen name="Login" component={LoginScreenStructure}  options={{gestureEnabled: false,  }} />
           {/* <Stack.Screen name="dojoScreen" component={TabNavigator} options={{gestureDirection: 'vertical' }} /> */}
           <Stack.Screen name="ConnectionScreen" component={TabNavigator}  options={{gestureDirection: 'vertical' }} />
-          <Stack.Screen name="SetProfileScreen" component={SetProfileScreen}  options={{ presentation: "card" }} />
+          <Stack.Screen name="SetProfileScreen" component={SetProfileScreen}  options={{ presentation: "card", gestureEnabled: false, }} />
           <Stack.Screen name="SignupScreen" component={SignUpScreenStructure}  options={{ presentation: "modal" }} />
           <Stack.Screen name="ChargeScreen" component={ChargeScreen}  options={{ presentation: "modal" }} />
-
+          <Stack.Screen name="BattleFieldBackgroundScreen" component={BattleFieldBackgroundScreen}  options={{ presentation: "transparentModal" }} />
           <Stack.Screen name="GuideScreen" component={GuideScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="BattleTopicScreen" component={BattleTopicScreen}  options={{ presentation:  "card"  }}/>
           <Stack.Screen name="ShopScreen" component={ShopScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="CreateScreen" component={CreateScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="JoinScreen" component={JoinScreen}  options={{ presentation:  "transparentModal"  }}/>
-          <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "transparentModal"  }}/>
+          <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "card"  }}/>
           <Stack.Screen name="SettingScreen" component={SettingScreen}  options={{ presentation:  "card"  }}/>
           <Stack.Screen name="TelefonScreen" component={TelefonScreenStructure}  options={{ presentation:  "transparentModal"  }}/>
-         
+          <Stack.Screen name="ChallengeWaitingScreen" component={ChallengeWaitingRoom}  options={{ presentation:  "card", gestureEnabled: false,  }}/>
+          {/* <Stack.Screen name="ChallengeWaitingScreen" component={ChallengeWaitingRoom}  options={{ presentation:  "transparentModal", gestureEnabled: false, cardStyle: { backgroundColor: 'transparent' } }}/> */}
 
         
         </Stack.Navigator>

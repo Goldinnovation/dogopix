@@ -2,7 +2,7 @@ import { View, Text, Image, ImageBackground, StyleSheet } from "react-native"
 import ShowBoardComp from "../component/showBoard/showBoardComp"
 import DescripScroll from "../component/descriptionscroll/descripScroll"
 import SliderComp from "../component/Slider/sliderComp"
-
+import { Image as ExpoImage } from 'expo-image';
 
 
 const DojoScreenStucture = () => {
@@ -12,11 +12,11 @@ const DojoScreenStucture = () => {
        
         style={{
         //  backgroundColor: "grey",
-        //  flex: 1,
+         flex: 1,
          // backgroundImage: 'url("/assets/bat.webp")',
          // experimental_backgroundImage: 'url("/assets/bat.webp")',
          width: "100%", 
-         height: "92%", 
+        //  height: "92%", 
          display: "flex", 
          flexDirection: "column", 
          gap: 10, 
@@ -35,8 +35,8 @@ const DojoScreenStucture = () => {
  
            zIndex: 0
          }}>
-         <Image
-           source={require("../assets/back.webp")}
+         <ExpoImage
+           source={require("../assets/loop.gif")}
            style={{
              width: "100%",
              height: "100%",
@@ -46,6 +46,7 @@ const DojoScreenStucture = () => {
            
  
            }}
+            contentFit="cover"
          />
  
          </View>

@@ -71,7 +71,7 @@ const JoinScreen = () => {
       <View className="h-[50%] w-full flex flex-col">
         <View className="h-[30%] w-full flex flex-row items-center justify-center">
           <TextInput
-            className="w-3/4 h-12 bg-white/20 text-white rounded-xl px-4 text-lg border border-blue-400"
+            className="w-3/4 h-12 bg-white/20 text-white rounded-xl px-4 text-lg border border-blue-400 6"
             placeholder="Enter Code"
             placeholderTextColor="#b3c7e6"
             keyboardType="default"

@@ -47,7 +47,8 @@ const ShowBoardComp = () => {
             borderBottomWidth: 1, 
             borderBottomColor: "gray" ,
             borderTopColor: "gray", 
-            borderTopWidth: 1
+            borderTopWidth: 0  //default 1
+              
 
 
            
@@ -65,8 +66,8 @@ const ShowBoardComp = () => {
                     borderRadius: 7,
                     display: "flex", 
                     justifyContent: "center",
-                    alignItems: "center"
-
+                    alignItems: "center",
+                    opacity: 0 //defaul none 
                 }}>
                     <Text style={{
                         color: "yellow",
