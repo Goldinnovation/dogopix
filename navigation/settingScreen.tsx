@@ -24,8 +24,8 @@ const SettingScreen = () => {
 
      
         
-
-            <View  className="w-full h-[7%]  jusitfy-center">  
+          {/* Header Section */}
+            <View  className="w-full  h-[7%]  flex	flex-row items-center  justify-between">  
             <TouchableOpacity 
             onPress={handleGoBackTopProfile}
             className="flex flex-row w-[35%] h-[100%] pl-[2%] items-center">
@@ -48,20 +48,24 @@ const SettingScreen = () => {
 
             </TouchableOpacity>
            
+            <View className="pr-[5%]">
+            <Text className="text-3xl text-white font-bold tracking-wide">Setting</Text>
+            </View>
             </View>
            
-           
-              <View className=" h-[90%]  items-center" >
+          {/* Body Section */}
+              <View className=" h-[90%] mt-[20%]  items-center" >
                 <View className="w-full h-[95%]  gap-16">
                   {/* Component first row  */}
                   <View className=" mt-[20%] h-[17%] flex flex-row items-center justify-center gap-11">
                   
-                  {/* Feedback */}
+                  {/* Shop */}
                   <View className="w-[30%] h-[100%] items-center justify-center   gap-2">
                   <TouchableOpacity
-                  onPress={() => navigation.push("ShopScreen")}
+                  // onPress={() => navigation.push("ShopScreen")
+                  onPress={() => navigation.push("GuideScreen")}
                    className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
-                  <Image
+                  {/* <Image
                   source={require("./../assets/fed.png")}
                   style={{
                     // width: scale(100),
@@ -70,10 +74,20 @@ const SettingScreen = () => {
                     height: "50%"
                     // borderRadius: 100,
                   }}
-                />
+                    
+                /> */}
+                 <Image
+                  source={require("./../assets/alien.png")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "50%",
+                    height: "50%"
+                    // borderRadius: 100,
+                  }}/>
                   </TouchableOpacity>
                   <View className="w-[100%] h-[20%] items-center justify-center">
-                    <Text className="color-white">Shop</Text>
+                    <Text className="color-white">Guide</Text>
                   </View>
                   </View>
 
@@ -128,18 +142,19 @@ const SettingScreen = () => {
                   <TouchableOpacity
                    onPress={() => navigation.push("GuideScreen")}
                   className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
-                  <Image
-                  source={require("./../assets/alien.png")}
+                 
+                   <Image
+                  source={require("./../assets/pwOf.png")}
                   style={{
                     // width: scale(100),
                     // height: verticalScale(25),
-                    width: "50%",
-                    height: "50%"
+                    width: "45%",
+                    height: "45%"
                     // borderRadius: 100,
                   }}/>
                   </TouchableOpacity>
                   <View className="w-[100%] h-[20%] items-center justify-center">
-                    <Text className="color-white">Guide</Text>
+                    <Text className="color-white">Power Off</Text>
                   </View>
                   </View>
 
@@ -150,11 +165,13 @@ const SettingScreen = () => {
                   </View>
 
 
-                      {/* Component Third  */}
+                  {/* Power Off Section */}
+                  {/* 
                   <View className=" h-[17%] flex flex-row items-center justify-center gap-11 ">
                   
-                  {/* Feedback */}
+             
                   <View className="w-[30%] h-[100%]  items-center justify-center   gap-2">
+                    
                   <TouchableOpacity 
                  
                   className=" h-[70%] w-[70%] bg-[rgba(0,0,0,0.75)] rounded-full items-center justify-center">
@@ -179,7 +196,8 @@ const SettingScreen = () => {
 
                  
                   
-                  </View>
+                  </View> */}
+
                 </View>
               </View>
 

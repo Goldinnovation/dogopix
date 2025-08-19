@@ -4,6 +4,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextInput,
+  Image
 } from "react-native";
 import { ParamListBase } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
@@ -26,12 +27,47 @@ const JoinScreen = () => {
       end={[1, 1]}
       style={{ flex: 1 }}
     >
-      <View className="h-[10%] w-full flex flex-row items-center justify-center mt-[50%]">
+
+      {/* Header */}
+      <View  className="w-full  h-[7%] mt-[15%]  flex	flex-row items-center  justify-between">  
+
+            <View className="pl-[5%]">
+            <Text className="text-3xl text-white font-bold tracking-wide">Join</Text>
+            </View>
+            <TouchableOpacity 
+
+            onPress={() => navigation.goBack()}
+        
+            className="flex flex-row w-[35%] h-[100%] items-center justify-center">
+
+              <View className="flex flex-row items-center justify-center pr-[10%]">
+                <Text className="text-xl text-white ">Back</Text>
+              </View>
+              
+            <Image
+                  source={require("../assets/ddown.png")}
+                  style={{
+                    // width: scale(100),
+                    // height: verticalScale(25),
+                    width: "20%",
+                    height: "40%"
+                    // borderRadius: 100,
+                  }}
+                />
+
+             
+
+            </TouchableOpacity>
+           
+      </View>
+
+      {/* Enter Your Code Section */}
+      <View className="h-[10%] w-full flex flex-row items-center justify-center mt-[35%]">
         <Text className="text-3xl text-white font-bold tracking-wide">
           Enter Your Code
         </Text>
       </View>
-
+      {/* Button Section */}
       <View className="h-[50%] w-full flex flex-col">
         <View className="h-[30%] w-full flex flex-row items-center justify-center">
           <TextInput

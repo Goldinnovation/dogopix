@@ -58,11 +58,9 @@ const GuideScreen = () => {
             Welcome to the Guide
           </Text>
           <Text className="text-base text-white leading-7 text-center mb-4">
-            Using this app is based on <Text className="font-bold text-green-200">trust</Text> and <Text className="font-bold text-green-200">open communication</Text>.{"\n\n"}
+            This app is based on <Text className="font-bold text-green-200">trust</Text>, <Text className="font-bold text-green-200">open communication</Text>, and <Text className="font-bold text-green-200">intuition</Text>.{"\n\n"}
             Playing this game means showing trust and respect for your relationships.{"\n\n"}
-            <Text className="font-bold text-red-400">
-            🚩 This app is not for cheaters, psychopaths, narcissists.
-            </Text>{"\n\n"}
+          
             Please use it with honesty, empathy, and a willingness to connect.{"\n\n"}
             If you’re ready to play fair and build trust, you’re in the right place!
           </Text>
@@ -132,10 +130,25 @@ const GuideScreen = () => {
       </Text>
     </View>
   </View>
- 
+
+  {/* Red Flag List  */}
+  <View className="w-full bg-white/5 rounded-2xl p-4 mb-6 border border-white/10">
+    <Text className="text-xl font-bold text-red-300 mb-3 text-center">Red Flag List</Text>
+    <View>
+      <Text className="text-white mb-2">🚩 Cheaters</Text>
+      <Text className="text-white mb-2">🚩 Psychopaths</Text>
+      <Text className="text-white mb-2">🚩 Narcissists</Text>
+     
+    </View>
+    <View className="mt-5">
+    <Text className="text-red-500 mb-2 text-center"> This app is not compatible with the life philosophy of cheaters, psychopaths, narcissists, or abusers. Please be aware: it might cause exposure.</Text>
+    <Text className="text-yellow-400 text-3xl text-center mt-2">⚠️</Text>
+    </View>
+  </View>
+
   <Text className="font-bold text-red-400 text-center mt-5 mb-5">
-  Choose wisely! 😎
-</Text>
+    Choose wisely! 😎
+  </Text>
 </View>
 
           <TouchableOpacity

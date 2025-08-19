@@ -25,6 +25,7 @@ const ProfileScreenStructure = () => {
                 justifyContent: "space-between", 
                 marginTop: "3%",
                 // opacity: 0
+                opacity: 0   //removed the telefon option from the top right section 
             }}>
          
 

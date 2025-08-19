@@ -13,13 +13,38 @@ const ShopScreen = () => {
 
     return(
         <View style={styles.container}>
-        <View className="h-[7%] w-full flex flex-row items-center justify-center">
+
+          {/* Header */}
+        <View className="h-[7%] bg-orange-200  w-full flex flex-row items-center justify-center">
+
+          {/* Left Side Section - Header */}
+          <View>
           <Text className="text-3xl color-white">Shop</Text>
+          </View>
+         
+
+          {/* Right Side Section - Header */}
+          <View>
+          <Image
+                source={require("../assets/h1.png")}
+                style={{
+                  // width: scale(100),
+                  // height: verticalScale(25),
+                  width: "40%",
+                  height: "60%",
+                  // borderRadius: 100,
+                }}
+                    />
+          </View>
         </View>
+
+        {/* Body */}
         <View className="h-[90%] w-full flex flex-col">
          
 
           <View className="w-full h-[100%] p-[4%] items-center justify-center">
+
+            {/* Image Section */}
             <View className="w-[97%] h-[80%] border rounded-lg border-white">
 
             <Image
@@ -33,6 +58,9 @@ const ShopScreen = () => {
                 }}
               />
             </View>
+
+
+            {/* Details Section */}
             <View className="w-full h-[20%] flex flex-col items-center justify-around ">
              <View className="w-[97%] h-[40%] items-center justify-between flex flex-row">
                 
@@ -82,12 +110,7 @@ const ShopScreen = () => {
              
             </View>
           </View>
-          {/* <View className="bg-green-400 w-full h-[20%]">
-            
-            <View>
-            <Text>22121</Text>
-            </View>
-          </View> */}
+       
         </View>
         
   

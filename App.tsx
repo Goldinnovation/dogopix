@@ -27,11 +27,12 @@ import ProfileScreenStructure from './navigation/profile';
 import SignUpScreenStructure from './navigation/signUp';
 import RainLayer from './component/Rain/rainlayer';
 import FightTopic from './navigation/fightTopic';
-
+import BattleTopicScreen from './navigation/battleTopicScreen';
 import JoinScreen from './navigation/JoinScreen';
 import CreateScreen from './navigation/createScreen';
 import ShopScreen from './navigation/shopScreen';
 import GuideScreen from './navigation/guideScreen';
+
 
 
 const MyTheme = {
@@ -84,7 +85,7 @@ function AppNavigator() {
           <Stack.Screen name="ChargeScreen" component={ChargeScreen}  options={{ presentation: "modal" }} />
 
           <Stack.Screen name="GuideScreen" component={GuideScreen}  options={{ presentation:  "transparentModal"  }}/>
-  
+          <Stack.Screen name="BattleTopicScreen" component={BattleTopicScreen}  options={{ presentation:  "card"  }}/>
           <Stack.Screen name="ShopScreen" component={ShopScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="CreateScreen" component={CreateScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="JoinScreen" component={JoinScreen}  options={{ presentation:  "transparentModal"  }}/>
@@ -216,7 +217,8 @@ function TabNavigator() {
             width: "30%", 
             // backgroundColor: "pink", 
           alignItems: "center", 
-          justifyContent: "center"
+          justifyContent: "center", 
+          opacity: 0   //removed the telefon option from the top right section
 
           }}>
                <Image
