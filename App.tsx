@@ -91,7 +91,7 @@ function AppNavigator() {
           <Stack.Screen name="ShopScreen" component={ShopScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="CreateScreen" component={CreateScreen}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="JoinScreen" component={JoinScreen}  options={{ presentation:  "transparentModal"  }}/>
-          <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "card"  }}/>
+          <Stack.Screen name="DojoScreen" component={DojoScreenStucture}  options={{ presentation:  "card" ,  gestureEnabled: false,  }}/>
           <Stack.Screen name="SettingScreen" component={SettingScreen}  options={{ presentation:  "card"  }}/>
           <Stack.Screen name="TelefonScreen" component={TelefonScreenStructure}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="ChallengeWaitingScreen" component={ChallengeWaitingRoom}  options={{ presentation:  "card", gestureEnabled: false,  }}/>
