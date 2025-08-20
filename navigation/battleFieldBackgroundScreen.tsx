@@ -158,7 +158,7 @@ const BattleFieldBackgroundScreen = () => {
     {/* Start Battle Button, User can click on the Button to start the challenge */}
    <View className="px-6  h-[15%] flex justify-center items-center">
           <TouchableOpacity
-            onPress={() => navigation.push("DojoScreen")}
+            onPress={() => navigation.push("ChallengeWaitingScreen")}
             className="h-12 w-[70%] rounded-lg items-center justify-center border border-blue-500 bg-blue-800/40"
           >
             <Text className="text-white text-xl">Next</Text>

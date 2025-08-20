@@ -91,7 +91,7 @@ const BattleTopicScreen = () => {
 
           <View className="pr-[5%]">
             <Text className="text-2xl text-white font-bold tracking-wide">
-              Choose your Interest
+              Choose your Topic
             </Text>
           </View>
         </View>

@@ -34,6 +34,7 @@ import ShopScreen from './navigation/shopScreen';
 import GuideScreen from './navigation/guideScreen';
 import BattleFieldBackgroundScreen from './navigation/battleFieldBackgroundScreen';
 import ChallengeWaitingRoom from './navigation/challengeWaitingRoom';
+import ImageSelectionScreen from './navigation/ImageSelectionScreen';
 
 
 const MyTheme = {
@@ -94,6 +95,7 @@ function AppNavigator() {
           <Stack.Screen name="SettingScreen" component={SettingScreen}  options={{ presentation:  "card"  }}/>
           <Stack.Screen name="TelefonScreen" component={TelefonScreenStructure}  options={{ presentation:  "transparentModal"  }}/>
           <Stack.Screen name="ChallengeWaitingScreen" component={ChallengeWaitingRoom}  options={{ presentation:  "card", gestureEnabled: false,  }}/>
+          <Stack.Screen name="ImageSelectionScreen" component={ImageSelectionScreen}  options={{ presentation:  "card", gestureEnabled: false,  }}/>
           {/* <Stack.Screen name="ChallengeWaitingScreen" component={ChallengeWaitingRoom}  options={{ presentation:  "transparentModal", gestureEnabled: false, cardStyle: { backgroundColor: 'transparent' } }}/> */}
 
         
