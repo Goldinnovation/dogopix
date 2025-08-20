@@ -19,88 +19,82 @@ import {
 } from "react-native-responsive-screen";
 // import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 // import { userSignUp } from '../api/signUpScreen_Api/userSignUp';
-import { BlurView } from "expo-blur";
+import { BlurView } from "expo-blur"
 
-const SignUpScreenStructure = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
-  const [email, setonChangeEmail] = useState("");
-  const [password, setonChangePassword] = useState("");
-  const [username, setUserName] = useState("");
-  const [repeatedPassword, setRepeatedPassword] = useState("");
-  const [flashback, setFlashback] = useState("");
-  const [flashbackMessage, setFlashbackMessage] = useState("");
-  const [approvalMessage, setApprovalMessage] = useState(false);
 
-  const hanldeSubmit = async () => {
-    //   console.log("data is send");
-    //   const signUpState = await userSignUp(username, email, password)
-    //   const message = signUpState
-    //    console.log('message', message);
-    //   if(message ===  "new user created"){
-    //     console.log('in new user');
-    //     setApprovalMessage(true)
-    //     setTimeout(() => {
-    //       setApprovalMessage(false)
-    //       navigation.goBack()
-    //     },1000)
-    //   }else if(message === "User already Exist"){
-    //        console.log('init exist');
-    //     setFlashback("userExist")
-    //     setFlashbackMessage("UserName already Exist")
-    //   }
-  };
+const SignUpComponentStructure = () => {
+    const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+    const [email, setonChangeEmail] = useState("");
+    const [password, setonChangePassword] = useState("");
+    const [username, setUserName] = useState("");
+    const [repeatedPassword, setRepeatedPassword] = useState("");
+    const [flashback, setFlashback] = useState("");
+    const [flashbackMessage, setFlashbackMessage] = useState("");
+    const [approvalMessage, setApprovalMessage] = useState(false);
+  
+    const hanldeSubmit = async () => {
+        //   console.log("data is send");
+        //   const signUpState = await userSignUp(username, email, password)
+        //   const message = signUpState
+        //    console.log('message', message);
+        //   if(message ===  "new user created"){
+        //     console.log('in new user');
+        //     setApprovalMessage(true)
+        //     setTimeout(() => {
+        //       setApprovalMessage(false)
+        //       navigation.goBack()
+        //     },1000)
+        //   }else if(message === "User already Exist"){
+        //        console.log('init exist');
+        //     setFlashback("userExist")
+        //     setFlashbackMessage("UserName already Exist")
+        //   }
+      };
 
-  const handlePasswordInput = () => {
-    //   if(password !== "" && password === repeatedPassword){
-    //     setFlashback("")
-    //     hanldeSubmit()
-    //  }else{
-    //       setFlashback("password")
-    //       setFlashbackMessage("Password don't match")
-    //  }
-  };
+      const handlePasswordInput = () => {
+        //   if(password !== "" && password === repeatedPassword){
+        //     setFlashback("")
+        //     hanldeSubmit()
+        //  }else{
+        //       setFlashback("password")
+        //       setFlashbackMessage("Password don't match")
+        //  }
+      };
+    
+      const handleEmailInput = () => {
+        //   if(email !== ""
+        //     // && email.includes("@")
+        //   ){
+        //     handlePasswordInput()
+        //   }else{
+        //     setFlashback("email")
+        //     setFlashbackMessage("Invalid Email field")
+        //   }
+      };
+    
+      const handleEmailUsernameInputCheck = () => {
+        //   if(username !== ""){
+        //     handleEmailInput()
+        //   }else{
+        //     setFlashback("username")
+        //     setFlashbackMessage("Please fill out the Username field")
+        //   }
+      };
+      const handleInputData = () => {
+        //   handleEmailUsernameInputCheck()
+      };
 
-  const handleEmailInput = () => {
-    //   if(email !== ""
-    //     // && email.includes("@")
-    //   ){
-    //     handlePasswordInput()
-    //   }else{
-    //     setFlashback("email")
-    //     setFlashbackMessage("Invalid Email field")
-    //   }
-  };
-
-  const handleEmailUsernameInputCheck = () => {
-    //   if(username !== ""){
-    //     handleEmailInput()
-    //   }else{
-    //     setFlashback("username")
-    //     setFlashbackMessage("Please fill out the Username field")
-    //   }
-  };
-
-  const handleInputData = () => {
-    //   handleEmailUsernameInputCheck()
-  };
-  return (
-    <View
-      style={{
-        height: "100%",
-        // flex: 1,
-        backgroundColor: "green",
-        paddingTop: 40,
-        borderTopWidth: 1,
-        borderColor: "rgba(179,179,179,1)",
-        borderRadius: 11,
-      }}
-    >
-      <LinearGradient
-        // colors={['black', 'black']} 
-        colors={["black", "grey", "black", "black"]}
+    return(
+        <LinearGradient
+        colors={["black", "black", "gray", "#0a0a0a", "#3a3a3a"]}
         style={styles.gradient}
         start={{ x: 0, y: 1 }}
         end={{ x: 0, y: 0 }}
+
+        // colors={["black", "black", "gray", "#0a0a0a", "#3a3a3a"]}
+        // start={[0, 0]}
+        // end={[1, 1]}
+        // style={{ flex: 1 }}
       >
         {/* Close btn */}
 
@@ -444,16 +438,21 @@ const SignUpScreenStructure = () => {
           </View>
         </View>
       </LinearGradient>
-    </View>
-  );
-};
+    
+    )
+
+
+}
+
 
 const styles = StyleSheet.create({
-  gradient: {
-    ...StyleSheet.absoluteFillObject,
-    // paddingTop: verticalScale(40),
-    flex: 1,
-  },
-});
 
-export default SignUpScreenStructure;
+  
+    gradient: {
+      ...StyleSheet.absoluteFillObject,
+      // paddingTop: verticalScale(40),
+      flex: 1,
+    },
+  });
+  
+export default SignUpComponentStructure

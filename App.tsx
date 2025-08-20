@@ -21,10 +21,10 @@ import SetProfileScreen from './navigation/setProfileInfo';
 // import DojoScreenStucture from './screen/dojo';
 // import ProfileScreenStructure from './screen/profile';
 // import SignUpScreenStructure from './screen/signUp';
-import LoginScreenStructure from './navigation/login';
+import LoginScreen from './navigation/loginScreen';
 import DojoScreenStucture from './navigation/dojo';
 import ProfileScreenStructure from './navigation/profile';
-import SignUpScreenStructure from './navigation/signUp';
+import SignUpScreen from './navigation/signUpScreen';
 import RainLayer from './component/Rain/rainlayer';
 import FightTopic from './navigation/fightTopic';
 import BattleTopicScreen from './navigation/battleTopicScreen';
@@ -79,11 +79,11 @@ function AppNavigator() {
     
       <Stack.Navigator screenOptions={{ headerShown: false }}>
 
-          <Stack.Screen name="Login" component={LoginScreenStructure}  options={{gestureEnabled: false,  }} />
+          <Stack.Screen name="Login" component={LoginScreen}  options={{gestureEnabled: false,  }} />
           {/* <Stack.Screen name="dojoScreen" component={TabNavigator} options={{gestureDirection: 'vertical' }} /> */}
           <Stack.Screen name="ConnectionScreen" component={TabNavigator}  options={{gestureDirection: 'vertical' }} />
           <Stack.Screen name="SetProfileScreen" component={SetProfileScreen}  options={{ presentation: "card", gestureEnabled: false, }} />
-          <Stack.Screen name="SignupScreen" component={SignUpScreenStructure}  options={{ presentation: "modal" }} />
+          <Stack.Screen name="SignupScreen" component={SignUpScreen}  options={{ presentation: "modal" }} />
           <Stack.Screen name="ChargeScreen" component={ChargeScreen}  options={{ presentation: "modal" }} />
           <Stack.Screen name="BattleFieldBackgroundScreen" component={BattleFieldBackgroundScreen}  options={{ presentation: "transparentModal" }} />
           <Stack.Screen name="GuideScreen" component={GuideScreen}  options={{ presentation:  "transparentModal"  }}/>
