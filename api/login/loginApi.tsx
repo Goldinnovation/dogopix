@@ -9,11 +9,9 @@ export interface LoginRequest {
 export interface LoginResponse {
   success: boolean;
   message: string;
-  token?: string;
-  user?: {
-    userId: string;
-    userName: string;
-  };
+  token: string;
+  setProfileData: boolean
+ 
 }
 
 

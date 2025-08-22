@@ -13,14 +13,12 @@ enum Role {
   USER
 }
 
-
 model account {
-  userId          String            @id @default(uuid())
-  userName        String            @unique
-  userEmail       String
-  userPassword   String
-  createdAt       DateTime          @default(now())
-
-  role            Role?             @default(USER)
-
+  userId            String   @id @default(uuid())
+  userName          String   @unique
+  userEmail         String
+  userPassword      String
+  createdAt         DateTime @default(now())
+  role              Role?    @default(USER)
+  hasProfileDataSet Boolean  @default(false)
 }

@@ -5,6 +5,8 @@ import userSignUpRouter  from "./router/Auth/userSignUp"
 import userLoginRouter  from "./router/Auth/userLogin"
 import passport from 'passport';
 import configurePassport from './config/passport';
+import userSetProfileData from "./router/User/userSetProfile"
+
 
 dotenv.config();
 
@@ -19,6 +21,7 @@ app.use(passport.initialize());
 // Auth routes
 app.use('/auth/signup', userSignUpRouter);
 app.use('/auth/login', userLoginRouter);
+app.use('/api/setUserProfile', userSetProfileData)
 
 const PORT: string | number = process.env.PORT || 4000;
 app.listen(PORT, () => {

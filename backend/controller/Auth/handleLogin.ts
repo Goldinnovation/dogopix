@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import passport from 'passport';
+import passport, { use } from 'passport';
 import { generateToken } from '../../config/passport';
+import prisma from '../../libs/prisma';
 
 interface LoginRequestBody {
   loginEmail?: string;
@@ -31,18 +32,22 @@ const authenticateLocal = (req: Request, res: Response, next: NextFunction) =>
     }
   });
 
+
+
 // Controller for the login route: authenticates via Passport and returns JWT
 const handleLogin = async (req: Request<{}, {}, LoginRequestBody>, res: Response, next: NextFunction): Promise<void> => {
   try {
-    console.log('req.body', req.body);
+
     const user = await authenticateLocal(req, res, next);
    
     const token = generateToken(user);
 
-    console.log('user', user);
+  
+
+ 
     console.log('token', token);
 
-    res.status(200).json({ message: 'Login successful', userId: user.userId, token });
+    res.status(200).json({ message: 'Login successful', userId: user.userId, token, setProfileData:  user.hasProfileDataSet });
     return;
   } catch (error) {
     // eslint-disable-next-line no-console

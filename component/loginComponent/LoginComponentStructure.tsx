@@ -82,8 +82,14 @@ const LoginComponentStructure = () => {
       "loginPassword": password
     }
 
-    console.log('userLoginData', userLoginData);
+ 
     const loginReq = await LoginUserAPI(userLoginData)
+
+    if(loginReq.message == "Login successful"){
+      console.log('loginReq', loginReq);
+      await AsyncStorage.setItem('userToken', loginReq.token);
+     
+    } 
 
   }
   const handleInputData = () => {
