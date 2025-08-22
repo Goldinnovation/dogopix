@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:4000';
-
+const API_URL = process.env.EXPO_PUBLIC_API_URL
 export interface LoginRequest {
-  email: string;
-  password: string;
+  loginEmail: string;
+  loginPassword: string;
 }
 
 export interface LoginResponse {
@@ -14,17 +13,21 @@ export interface LoginResponse {
   user?: {
     userId: string;
     userName: string;
-    userEmail: string;
-    role: string;
   };
 }
 
-export const loginUser = async (loginData: LoginRequest): Promise<LoginResponse> => {
+
+
+export const LoginUserAPI = async (loginData: LoginRequest): Promise<LoginResponse> => {
   try {
+
+    console.log('API_URL', API_URL);
+    console.log('LoginData', loginData);
     const response = await axios.post(`${API_URL}/auth/login`, loginData);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
+      console.log('error', error);
       throw new Error(error.response?.data?.message || 'Login failed');
     }
     throw error;

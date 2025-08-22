@@ -19,8 +19,9 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { BlurView } from "expo-blur";
-import { loginUser } from "../../api/login/loginApi";
+import { LoginUserAPI } from "../../api/login/loginApi";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const LoginComponentStructure = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
@@ -31,51 +32,63 @@ const LoginComponentStructure = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async () => {
-    if (!email || !password) {
-      setFlashback("fields");
-      setFlashbackMessage("Please fill in all fields");
-      return;
-    }
+    // if (!email || !password) {
+    //   setFlashback("fields");
+    //   setFlashbackMessage("Please fill in all fields");
+    //   return;
+    // }
 
-    if (!email.includes("@")) {
-      setFlashback("email");
-      setFlashbackMessage("Please enter a valid email");
-      return;
-    }
+    // if (!email.includes("@")) {
+    //   setFlashback("email");
+    //   setFlashbackMessage("Please enter a valid email");
+    //   return;
+    // }
 
-    setIsLoading(true);
-    try {
-      const result = await loginUser({ email, password });
+    // setIsLoading(true);
+    // try {
+    //   const result = await LoginUserAPI({ email, password });
       
-      if (result.success && result.token) {
-        // Store token in AsyncStorage
-        try {
-          await AsyncStorage.setItem('userToken', result.token);
-          await AsyncStorage.setItem('userData', JSON.stringify(result.user || {}));
-          console.log('Token stored successfully');
+    //   if (result.success && result.token) {
+    //     // Store token in AsyncStorage
+    //     try {
+    //       await AsyncStorage.setItem('userToken', result.token);
+    //       await AsyncStorage.setItem('userData', JSON.stringify(result.user || {}));
+    //       console.log('Token stored successfully');
           
-          // Navigate based on profile state
-          // For now, navigate to SetProfileScreen as in your original code
-          navigation.replace("SetProfileScreen");
-        } catch (storageError) {
-          console.error('Failed to store token:', storageError);
-          setFlashback("storage");
-          setFlashbackMessage("Login successful but failed to save session");
-        }
-      } else {
-        setFlashback("login");
-        setFlashbackMessage(result.message || "Login failed");
-      }
-    } catch (error) {
-      setFlashback("login");
-      setFlashbackMessage(error instanceof Error ? error.message : "Login failed");
-    } finally {
-      setIsLoading(false);
-    }
+    //       // Navigate based on profile state
+    //       // For now, navigate to SetProfileScreen as in your original code
+    //       navigation.replace("SetProfileScreen");
+    //     } catch (storageError) {
+    //       console.error('Failed to store token:', storageError);
+    //       setFlashback("storage");
+    //       setFlashbackMessage("Login successful but failed to save session");
+    //     }
+    //   } else {
+    //     setFlashback("login");
+    //     setFlashbackMessage(result.message || "Login failed");
+    //   }
+    // } catch (error) {
+    //   setFlashback("login");
+    //   setFlashbackMessage(error instanceof Error ? error.message : "Login failed");
+    // } finally {
+    //   setIsLoading(false);
+    // }
   };
 
+  const handleLoginWihtoutValidation = async() => {
+
+    const userLoginData = {
+      "loginEmail": email, 
+      "loginPassword": password
+    }
+
+    console.log('userLoginData', userLoginData);
+    const loginReq = await LoginUserAPI(userLoginData)
+
+  }
   const handleInputData = () => {
     // handleLogin();
+    handleLoginWihtoutValidation()
   };
 
   return (
