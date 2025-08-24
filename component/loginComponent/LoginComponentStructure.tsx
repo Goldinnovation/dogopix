@@ -85,11 +85,16 @@ const LoginComponentStructure = () => {
  
     const loginReq = await LoginUserAPI(userLoginData)
 
-    if(loginReq.message == "Login successful"){
-      console.log('loginReq', loginReq);
-      await AsyncStorage.setItem('userToken', loginReq.token);
+    if(loginReq.message == "Login successful" && loginReq.setProfileData == false){
+      console.log('loginReq in false', loginReq.token);
+      await AsyncStorage.setItem('Token', loginReq.token);
+      navigation.push("SetProfileScreen")
      
-    } 
+    }else if(loginReq.message == "Login successful" && loginReq.setProfileData == true){
+      console.log('loginReq in true', loginReq);
+      await AsyncStorage.setItem('Token', loginReq.token);
+      navigation.push("ConnectionScreen")
+    }
 
   }
   const handleInputData = () => {
