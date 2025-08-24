@@ -39,8 +39,7 @@ export default function(passport: PassportStatic){
         new LocalStrategy(
           { usernameField: 'loginEmail', passwordField: 'loginPassword' },
           async (loginEmail: string, loginPassword: string, done: (Error: any, user?: Express.User | false, options?: { message: string }) => void ) => {
-            console.log('loginEmail',loginEmail);
-            console.log('loginPassword', loginPassword);
+         
 
            try{
             

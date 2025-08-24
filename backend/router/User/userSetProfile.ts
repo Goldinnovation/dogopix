@@ -1,8 +1,17 @@
 import { Router } from "express"
 const router = Router()
 import handleUserSetProfile from "../../controller/User/handleUserSetProfile";
+import DecodeANDVerifyToken from "../../middleware/decodePost";
 
 
-router.post('/', handleUserSetProfile );
+
+
+import multer from "multer";
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage, limits: { fieldSize: 10 * 1024 * 1024 }}).single("image");
+
+
+router.post('/', upload, DecodeANDVerifyToken, handleUserSetProfile );
 
 export default router

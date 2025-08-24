@@ -21,7 +21,7 @@ app.use(passport.initialize());
 // Auth routes
 app.use('/auth/signup', userSignUpRouter);
 app.use('/auth/login', userLoginRouter);
-app.use('/api/setUserProfile', userSetProfileData)
+app.use('/api/UpdateProfileData', userSetProfileData)
 
 const PORT: string | number = process.env.PORT || 4000;
 app.listen(PORT, () => {

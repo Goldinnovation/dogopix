@@ -21,7 +21,7 @@ const authenticateLocal = (req: Request, res: Response, next: NextFunction) =>
             console.log('user', user);
             return res.status(401).json({ success: false, message: info?.message || 'Login failed' });
           }
-          console.log('user', user);
+          // console.log('user', user);
           return resolve(user);
         } catch (innerError) {
           return reject(innerError);
@@ -45,7 +45,7 @@ const handleLogin = async (req: Request<{}, {}, LoginRequestBody>, res: Response
   
 
  
-    console.log('token', token);
+    // console.log('token', token);
 
     res.status(200).json({ message: 'Login successful', userId: user.userId, token, setProfileData:  user.hasProfileDataSet });
     return;
