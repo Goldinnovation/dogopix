@@ -79,9 +79,8 @@ function AppNavigator() {
     
       <Stack.Navigator screenOptions={{ headerShown: false }}>
 
-          <Stack.Screen name="Login" component={LoginScreen}  options={{gestureEnabled: false,  }} />
-         
-          {/* <Stack.Screen name="ConnectionScreen" component={TabNavigator}  options={{gestureDirection: 'vertical' }} /> */}
+          <Stack.Screen name="Login" component={LoginScreen}  options={{gestureEnabled: false}} />
+          <Stack.Screen name="ConnectionScreen" component={TabNavigator}  options={{gestureDirection: 'vertical' }} />
           <Stack.Screen name="SetProfileScreen" component={SetProfileScreen}  options={{ presentation: "card", gestureEnabled: false, }} />
           <Stack.Screen name="SignupScreen" component={SignUpScreen}  options={{ presentation: "modal" }} />
           <Stack.Screen name="ChargeScreen" component={ChargeScreen}  options={{ presentation: "modal" }} />

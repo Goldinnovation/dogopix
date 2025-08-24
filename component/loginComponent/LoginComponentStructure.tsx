@@ -88,7 +88,7 @@ const LoginComponentStructure = () => {
     if(loginReq.message == "Login successful" && loginReq.setProfileData == false){
       console.log('loginReq in false', loginReq.token);
       await AsyncStorage.setItem('Token', loginReq.token);
-      navigation.push("SetProfileScreen")
+      navigation.replace("SetProfileScreen")
      
     }else if(loginReq.message == "Login successful" && loginReq.setProfileData == true){
       console.log('loginReq in true', loginReq);
