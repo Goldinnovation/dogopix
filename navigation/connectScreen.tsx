@@ -4,13 +4,15 @@ import { ParamListBase } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { LinearGradient } from "expo-linear-gradient";
-
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useEffect } from "react";
+import { useState } from "react";
 
 
 
 const ConnectScreen = () => {
     const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+    const [imageUrl, setImageUrl] = useState<String | null>(null)
 
 
     const handleUserGamePlayOption = (userDecision: string) => {
@@ -25,6 +27,15 @@ const ConnectScreen = () => {
    
     }
 
+    const handleUserDataUpload = async() => {
+        const userProfileImage = await AsyncStorage.getItem("userProfileImageUrl")
+      
+        setImageUrl(userProfileImage)
+    }
+ 
+    useEffect(() => {
+        handleUserDataUpload()
+    })
 
     return(
         <View style={styles.container}>
@@ -43,7 +54,7 @@ const ConnectScreen = () => {
                     justifyContent: "center"
                 }}>
                         <Image
-                  source={require("../assets/me.jpeg")}
+                  source={imageUrl ? { uri: imageUrl } : require("../assets/agent.png")}
                   style={{
                     // width: scale(100),
                     // height: verticalScale(25),

@@ -42,12 +42,14 @@ const handleLogin = async (req: Request<{}, {}, LoginRequestBody>, res: Response
    
     const token = generateToken(user);
 
+    const usersafeImageUrl = (user.userProfileImageUrl?.trim() || "not Available");
+
   
 
  
     // console.log('token', token);
 
-    res.status(200).json({ message: 'Login successful', userId: user.userId, token, setProfileData:  user.hasProfileDataSet });
+    res.status(200).json({ message: 'Login successful', token, setProfileData:  user.hasProfileDataSet, userImage: usersafeImageUrl});
     return;
   } catch (error) {
     // eslint-disable-next-line no-console

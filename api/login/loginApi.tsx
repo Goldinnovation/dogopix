@@ -11,6 +11,7 @@ export interface LoginResponse {
   message: string;
   token: string;
   setProfileData: boolean
+  userImage: string
  
 }
 

@@ -6,7 +6,8 @@ import userLoginRouter  from "./router/Auth/userLogin"
 import passport from 'passport';
 import configurePassport from './config/passport';
 import userSetProfileData from "./router/User/userSetProfile"
-
+import { initializeApp } from 'firebase/app';
+import config from './config/firebase';
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 // Initialize passport strategies
 configurePassport(passport);
 app.use(passport.initialize());
+initializeApp(config.firebaseConfig);
 
 // Auth routes
 app.use('/auth/signup', userSignUpRouter);

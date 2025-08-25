@@ -21,6 +21,7 @@ import {
 import { BlurView } from "expo-blur";
 import { LoginUserAPI } from "../../api/login/loginApi";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as SecureStore from 'expo-secure-store';
 
 
 const LoginComponentStructure = () => {
@@ -83,17 +84,19 @@ const LoginComponentStructure = () => {
     }
 
  
-    const loginReq = await LoginUserAPI(userLoginData)
+    const loginRes = await LoginUserAPI(userLoginData)
 
-    if(loginReq.message == "Login successful" && loginReq.setProfileData == false){
-      console.log('loginReq in false', loginReq.token);
-      await AsyncStorage.setItem('Token', loginReq.token);
+    if(loginRes.message == "Login successful" && loginRes.setProfileData == false){
+      console.log('loginReq in false', loginRes.token);
+      await SecureStore.setItemAsync('Token', loginRes.token);
       navigation.replace("SetProfileScreen")
      
-    }else if(loginReq.message == "Login successful" && loginReq.setProfileData == true){
-      console.log('loginReq in true', loginReq);
-      await AsyncStorage.setItem('Token', loginReq.token);
-      navigation.push("ConnectionScreen")
+    }else if(loginRes.message == "Login successful" && loginRes.setProfileData == true){
+      console.log('loginReq in true', loginRes);
+ 
+      await SecureStore.setItemAsync('Token', loginRes.token);
+      await AsyncStorage.setItem('userProfileImageUrl', loginRes.userImage);
+      navigation.replace("ConnectionScreen")
     }
 
   }
