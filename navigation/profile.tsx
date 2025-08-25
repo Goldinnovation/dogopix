@@ -167,7 +167,9 @@ const ProfileScreenStructure = () => {
                   justifyContent: "center", 
                   alignItems: "center", 
                   gap: "15%", 
-                  paddingTop: "7%"
+                  // paddingTop: "7%" //default
+                  marginBottom: "10%"
+
 
                 }}>
                 <Text style={{
