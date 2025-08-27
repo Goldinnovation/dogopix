@@ -14,14 +14,36 @@ enum Role {
 }
 
 model account {
-  userId              String   @id @default(uuid())
-  userName            String   @unique
+  userId              String    @id @default(uuid())
+  userName            String    @unique
   userEmail           String
   userPassword        String
-  createdAt           DateTime @default(now())
-  role                Role?    @default(USER)
-  hasProfileDataSet   Boolean  @default(false)
+  createdAt           DateTime  @default(now())
+  role                Role?     @default(USER)
+  hasProfileDataSet   Boolean   @default(false)
   userProfileImageUrl String?
-  userBirthDate        DateTime?
- 
+  userBirthDate       DateTime?
+}
+
+model dojo_arena {
+  dojoId            String @id @default(uuid())
+  dojo_User_creater String
+  dojo_join_creater String
+  dojo_topic        String
+  dojo_Background   String
+  dojoSessionId     String @unique
+
+  session dojo_session @relation(fields: [dojoSessionId], references: [dojoSessionId])
+}
+
+model dojo_session {
+  dojoSessionId        String @id @default(uuid())
+  dojo_player          String
+  dojo_player_opponent String
+  dojo_image_scissors  String
+  dojo_image_rock      String
+  dojo_image_paper     String
+  dojo_points          Int
+
+  arena dojo_arena?
 }
