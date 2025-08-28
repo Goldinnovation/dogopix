@@ -7,17 +7,27 @@ import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from "expo-blur";
 import ModalDeepTrust from "../component/createComponent/modals/ModalDeepTrust";
 import ModalsSimpleTrust from "../component/createComponent/modals/ModalsSimpleTrust";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { dojoCreaterAction } from "../store/Action/dojoCreaterIdAction";
+
 
 const CreateScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
   const [width, setWidth] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const [modalSimpleVisible, setModalSimpleVisible] = useState(false);
+  const dispatchCreatorId = useDispatch()
 
   const hanleGoBackToProfile = () => {
     navigation.goBack();
   };
 
+  const handleBattleField = (e: string) => {
+    dispatchCreatorId(dojoCreaterAction(e))
+  }
+
+  
   return (
    
      <LinearGradient

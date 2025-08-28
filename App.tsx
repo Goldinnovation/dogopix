@@ -138,7 +138,7 @@ function TabNavigator() {
       }}
         />
        },
-       abBarBackground: () => (
+       tabBarBackground: () => (
         <BlurView
           intensity={20}
           // tint="light" // or "dark", or "default"
