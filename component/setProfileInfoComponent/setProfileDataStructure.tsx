@@ -106,6 +106,7 @@ const SetProfileDataStructureComponent = () => {
 
     if(userResCall?.message == "add connection to set User Profile"){
       await AsyncStorage.setItem('userProfileImageUrl', userResCall.userProfileImage);
+      await AsyncStorage.setItem('userId',userResCall.userId )
       navigation.replace("ConnectionScreen");
     }
     

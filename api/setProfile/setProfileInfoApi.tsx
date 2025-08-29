@@ -7,7 +7,9 @@ import * as SecureStore from 'expo-secure-store';
 export interface ProfileInfoResponse {
   success: boolean;
   message: string;
-  userProfileImage: string
+  userId: string; 
+  userProfileImage: string; 
+  
 
 }
 

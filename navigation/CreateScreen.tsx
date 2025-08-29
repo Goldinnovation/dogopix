@@ -9,22 +9,31 @@ import ModalDeepTrust from "../component/createComponent/modals/ModalDeepTrust";
 import ModalsSimpleTrust from "../component/createComponent/modals/ModalsSimpleTrust";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { dojoCreaterAction } from "../store/Action/dojoCreaterIdAction";
-
+import { createDojoAction } from "../store/Action/dojoCreaterIdAction";
+import * as SecureStore from 'expo-secure-store';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const CreateScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
   const [width, setWidth] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const [modalSimpleVisible, setModalSimpleVisible] = useState(false);
-  const dispatchCreatorId = useDispatch()
+  const dispatch = useDispatch()
 
   const hanleGoBackToProfile = () => {
     navigation.goBack();
+
+
   };
 
-  const handleBattleField = (e: string) => {
-    dispatchCreatorId(dojoCreaterAction(e))
+  const handleSimpleTrustAcception = async() => {
+
+    navigation.navigate("BattleTopicScreen")
+   
+    const userId = await AsyncStorage.getItem("userId") as string
+    const storeType = "dojo_creater_id"
+  
+    dispatch(createDojoAction(storeType, userId))
   }
 
   
@@ -60,7 +69,7 @@ const CreateScreen = () => {
           <Text className="color-black text-5xl font-medium">Simple</Text>
           <Text className="color-black text-4xl font-medium">Trust</Text>
           <TouchableOpacity
-           onPress={() => setModalSimpleVisible(true)}
+           onPress={() =>  setModalSimpleVisible(true)}
           className="w-[30%] h-[25%] justify-center items-center">
             <Image
               source={require(`../assets/rufb.png`)}
@@ -73,7 +82,7 @@ const CreateScreen = () => {
         </View>
         <View className="w-full h-[10%] absolute top-[65%] justify-center items-center">
           <TouchableOpacity 
-          onPress={() => navigation.navigate("BattleTopicScreen")}
+          onPress={handleSimpleTrustAcception}
           className="bg-white justify-center items-center w-[80%] h-[40%] rounded-full border border-black">
             <Text className="text-black">Accept</Text>
           </TouchableOpacity>
@@ -88,7 +97,7 @@ const CreateScreen = () => {
           <Text className="color-white text-5xl font-medium">Deep</Text>
           <Text className="color-white text-4xl font-medium">Trust</Text>
           <TouchableOpacity
-           onPress={() => setModalVisible(true)}
+           onPress={handleSimpleTrustAcception}
           className="w-[30%] h-[25%] justify-center items-center">
             <Image
               source={require(`../assets/ruf.png`)}

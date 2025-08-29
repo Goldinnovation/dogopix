@@ -11,10 +11,19 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { LinearGradient } from "expo-linear-gradient";
 import { ParamListBase } from "@react-navigation/native";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { useDispatch } from "react-redux";
+import { createDojoAction } from "../store/Action/dojoCreaterIdAction";
+
+
 
 const BattleTopicScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
   const [selectedTopic, setSelectedTopic] = useState<string>("");
+  const dispatch = useDispatch()
+  const {dojo_creater_id} = useSelector((state: RootState) => state.dojoCreatorReducer);
+
 
   const InterestTopics: { label: string; icon: string }[] = [
     { label: "Screenshots", icon: "📸" },
@@ -59,6 +68,24 @@ const BattleTopicScreen = () => {
     { label: "Emotional", icon: "😌" },
   ];
 
+
+  const handleUserBattleTopic = () =>{ 
+    
+    if(selectedTopic !== ""){
+      console.log('triggert on handle');
+      const storeType = "dojo_topic"
+      navigation.push("BattleFieldBackgroundScreen")
+      dispatch(createDojoAction(storeType, selectedTopic))
+    }
+    
+
+
+  }
+
+
+  // console.log('dojo_creater_id', dojo_creater_id);
+
+  
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -120,7 +147,7 @@ const BattleTopicScreen = () => {
                 <TouchableOpacity
                   key={topic.label}
                   className={`rounded-full px-4 py-3 my-2 mr-2 border ${isSelected ? "bg-green-800/40 border-green-400" : "bg-white/10 border-white/20"}`}
-                  onPress={() => setSelectedTopic(topic.label)}
+                  onPress={() =>   setSelectedTopic(topic.label)}
                   activeOpacity={0.8}
                 >
                   <Text
@@ -136,7 +163,7 @@ const BattleTopicScreen = () => {
 
         <View className="px-6  h-[15%] flex justify-center items-center">
           <TouchableOpacity
-            onPress={() => navigation.push("BattleFieldBackgroundScreen")}
+            onPress={handleUserBattleTopic}
             className="h-12 w-[70%] rounded-lg items-center justify-center border border-green-500 bg-green-800/90"
           >
             <Text className="text-white text-xl">Next</Text>

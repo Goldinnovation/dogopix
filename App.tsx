@@ -35,6 +35,7 @@ import GuideScreen from './navigation/guideScreen';
 import BattleFieldBackgroundScreen from './navigation/battleFieldBackgroundScreen';
 import ChallengeWaitingRoom from './navigation/challengeWaitingRoom';
 import ImageSelectionScreen from './navigation/ImageSelectionScreen';
+import { store } from './store/store';
 
 
 const MyTheme = {
@@ -43,6 +44,7 @@ const MyTheme = {
   colors: {
     ...DefaultTheme.colors,
     background: 'transparent',
+    flex: 1,
   
   },
 };
@@ -336,16 +338,9 @@ function TabNavigator() {
 export default function App() {
   return (
 
-    // <Provider store={store} >
-    // <View style={styles.container}>
-    
-    <AppNavigator/>
-    
-       
-       
-     
-    // </View>
-    // </Provider>
+    <Provider store={store}>
+      <AppNavigator />
+    </Provider>
   );
 }
 
@@ -353,7 +348,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: "100%",
-    // backgroundColor: 'skyblue',
+    backgroundColor: 'skyblue',
     display: "flex", 
     alignItems: 'center',
     justifyContent: 'center',

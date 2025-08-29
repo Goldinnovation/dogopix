@@ -8,13 +8,14 @@ import { Dojo_id } from "../types"
 
 
 
-export const dojoCreaterAction = (dojoCreaterIdData: string) => {
+export const createDojoAction = (dojoKeys: string, dojoValue: string) => {
 
 
-  console.log('dojoCreaterIdData', dojoCreaterIdData);
+  // console.log('dojoKeys on Action ', dojoKeys);
+  // console.log('dojoValue on Action ', dojoValue);
   return {
-    type: Dojo_id,
-    payload: dojoCreaterIdData
+    type: dojoKeys,
+    payload: dojoValue
   }
   
 }

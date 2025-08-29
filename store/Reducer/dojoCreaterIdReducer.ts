@@ -19,10 +19,10 @@ export default (state = initial_Dojo_ArenaState, {type , payload}: any)=> {
 
    switch(type) {
 
-    case"Dojo_id": 
+    case"dojo_creater_id": 
     return{...state, dojo_creater_id: payload}
 
-    case "Dojo_Topic": 
+    case "dojo_topic": 
     return{...state, dojo_topic_title: payload}
 
     case "dojo_background": 

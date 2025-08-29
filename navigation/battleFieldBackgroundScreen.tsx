@@ -4,6 +4,9 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { LinearGradient } from "expo-linear-gradient";
 import { ParamListBase } from "@react-navigation/native";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { useDispatch } from "react-redux";
 import { Image as ExpoImage } from 'expo-image';
 
 
@@ -11,6 +14,9 @@ import { Image as ExpoImage } from 'expo-image';
 const BattleFieldBackgroundScreen = () => {
     
     const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+    const {dojo_topic_title, dojo_creater_id} = useSelector((state: RootState) => state.dojoCreatorReducer);
+
+
 
     const [selectedImage, setSelectedImage] = useState("")
 
@@ -48,6 +54,8 @@ const BattleFieldBackgroundScreen = () => {
         // },
     ]
 
+    
+
     // Static asset map for local images (Metro requires static paths)
     const imageSources: Record<string, any> = {
         "loop.gif": require("./../assets/loop.gif"),
@@ -61,6 +69,12 @@ const BattleFieldBackgroundScreen = () => {
   const itemWidth = Math.round(screenWidth * 0.78); // centered card width
   const itemHeight = Math.round(screenHeight * 0.55);
 
+
+  // console.log('dojo_creater_Id ', dojo_creater_id );
+  // console.log('dojo_creater_ topic ', dojo_topic_title );
+  console.log('1 time');
+
+ 
   return (
     <View style={styles.container}>
     <LinearGradient

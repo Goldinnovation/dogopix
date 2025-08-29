@@ -129,7 +129,7 @@ export const uploadImageUrlToDatabase   = async(currentUserId:string, userCloudI
    console.log('updated the table account ', setUserProfileData);
 
   //  res.status(200).json({message: "Image was successfully stored"})
-   res.json({message: "add connection to set User Profile", userProfileImage: setUserProfileData.userProfileImageUrl})
+   res.json({message: "add connection to set User Profile", userId: setUserProfileData.userId, userProfileImage: setUserProfileData.userProfileImageUrl})
 
   }catch(error){
 
