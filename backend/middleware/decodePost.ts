@@ -22,20 +22,27 @@ const DecodeANDVerifyToken = (
   next: NextFunction
 ) => {
   try {
+    console.log('req.body', req.body);
     if (req.body) {
       
       const SECRET_KEY = process.env.JWT_SECRET_KEY as string;
       const authHeader = req.headers.authorization;
-      const token = authHeader && authHeader.startsWith('Bearer ')
-        ? authHeader.substring(7)
-        : null;
+      // console.log('authHeader', authHeader);
+      let token = authHeader;
+      while (token && token.startsWith('Bearer ')) {
+        token = token.substring(7);
+      }
 
+        
       if (!token) {
         return res.status(401).json({ message: 'No token provided' });
       }
 
+
       const decoded = jwt.verify(token, SECRET_KEY) as DJwtPayload;
       (req as AuthenticatedRequest).decodedUserId = decoded.userId;
+
+      console.log('decoded', decoded);
 
 
       next();

@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import userSignUpRouter  from "./router/Auth/userSignUp"
 import userLoginRouter  from "./router/Auth/userLogin"
+import handleSetPlayerBackgroundRouter from "./router/Admin/handleSetPlayerBackground"
 import passport from 'passport';
 import configurePassport from './config/passport';
 import userSetProfileData from "./router/User/userSetProfile"
@@ -14,6 +15,7 @@ dotenv.config();
 const app: Express = express();
 app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Initialize passport strategies
 configurePassport(passport);
@@ -23,6 +25,7 @@ initializeApp(config.firebaseConfig);
 // Auth routes
 app.use('/auth/signup', userSignUpRouter);
 app.use('/auth/login', userLoginRouter);
+app.use('/api/set-player-background', handleSetPlayerBackgroundRouter);
 app.use('/api/UpdateProfileData', userSetProfileData)
 
 const PORT: string | number = process.env.PORT || 4000;
