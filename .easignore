@@ -1,0 +1,8 @@
+# Backend
+backend/
+backend/**
+
+
+# Assets (temporary fix)
+assets/
+assets/**
