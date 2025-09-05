@@ -4,11 +4,11 @@
     "slug": "DojoPix",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/app.logo.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/app.logo.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
