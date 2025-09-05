@@ -22,7 +22,6 @@ const DecodeANDVerifyToken = (
   next: NextFunction
 ) => {
   try {
-    console.log('req.body', req.body);
     if (req.body) {
       
       const SECRET_KEY = process.env.JWT_SECRET_KEY as string;
@@ -42,7 +41,6 @@ const DecodeANDVerifyToken = (
       const decoded = jwt.verify(token, SECRET_KEY) as DJwtPayload;
       (req as AuthenticatedRequest).decodedUserId = decoded.userId;
 
-      console.log('decoded', decoded);
 
 
       next();
